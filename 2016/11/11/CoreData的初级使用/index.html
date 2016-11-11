@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hello World | Juju</title>
+  <title>CoreData的初级使用 | Juju</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -180,39 +180,57 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-11-11T12:44:21.000Z" itemprop="datePublished">
+      <time datetime="2016-11-11T14:34:51.000Z" itemprop="datePublished">
           2016-11-11
       </time>
     
 </span>
-                <h1>Hello World</h1>
+                <h1>CoreData的初级使用</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+      		<h1 id="CoreData-Study"><a href="#CoreData-Study" class="headerlink" title="CoreData_Study"></a>CoreData_Study</h1><ul>
+<li><p>在创建工程的时候，一定要选CoreData！一定要选CoreData！一定要选CoreData！</p>
+</li>
+<li><p>进行storyboard的页面设置，创建tableView控件，</p>
+</li>
+<li><p>将方法拖拽到ViewController中，进行实现，其中，引入了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@property (strong, nonatomic) IBOutlet UITableView *tableView;</div><div class="line"></div><div class="line">- (IBAction)addModel:(id)sender&#123;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>既然设置了tableView，就必须要导入 delegate 的方法，所以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@interface ViewController ()&lt;UITableViewDataSource, UITableViewDelegate, UIApplicationDelegate&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>引入delegate协议之后，就必须实现 delegate 和 dataSource 的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//返回分区中的行数</div><div class="line">- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section &#123;</div><div class="line">    return self.dataSource.count;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//返回分区</div><div class="line">- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView &#123;</div><div class="line">    return 1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    </div><div class="line">    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;cell&quot; forIndexPath:indexPath];</div><div class="line">    </div><div class="line">    Clothes *cloth = self.dataSource[indexPath.row];</div><div class="line">    </div><div class="line">    cell.textLabel.text = [NSString stringWithFormat:@&quot;%@--%@&quot;,cloth.name,(int64_t)cloth.price];</div><div class="line">    </div><div class="line">    return cell;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置好必须实现的 delegate 和 dataSource 的方法之后，继续实现设置可以编辑表格，和点击每一cell的实现方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">//允许编辑tableView</div><div class="line">- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    return YES;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    if (editingStyle == UITableViewCellEditingStyleDelete) &#123;</div><div class="line">        //删除数据源</div><div class="line">        Clothes *cloth = self.dataSource[indexPath.row];</div><div class="line">        </div><div class="line">        [self.dataSource removeObject:cloth];</div><div class="line">        </div><div class="line">        //删除数据管理中的数据</div><div class="line">        [self.myAppDelegate.persistentContainer.viewContext deleteObject:cloth];</div><div class="line">        </div><div class="line">        //将进行更改进行永久保存</div><div class="line">        [self.myAppDelegate saveContext];</div><div class="line">        </div><div class="line">        //删除单元格</div><div class="line">        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//点击cell修改数据</div><div class="line">- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    //1、找到模型对象</div><div class="line">    Clothes *cloth = self.dataSource[indexPath.row];</div><div class="line">    </div><div class="line">    cloth.name = @&quot;NIKE&quot;;</div><div class="line">    </div><div class="line">    //更改数据源,刷新单元行</div><div class="line">    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];</div><div class="line">    </div><div class="line">    //更改之后进行永久保存</div><div class="line">    [self.myAppDelegate saveContext];</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建这些方法之后，设置xcdatamodel并导入，实现作用方法。</p>
+</li>
+<li><p>在每次添加数据之后，想数据存储，就先要使用<code>NSFetchRequest</code>查询数据，描述对象<code>NSSortDescriptor</code></p>
+</li>
+<li><p>切记，更改数据之后，就应该调用<code>-(void)saveContext;</code>方法进行数据的永久保存</p>
+</li>
+<li><p>在需要删除数据的时候，首先要删除数据源<code>_dataSource</code>,再删除元祖<code>_tableView</code>的数据，最后实现<code>saveContext</code>永久保存</p>
+<p>​</p>
+</li>
+</ul>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2016/11/11/CoreData的初级使用/" style="float: left;">
-        ← CoreData的初级使用
-    </a>
     
+    <a class="pull-right" href="/2016/11/11/hello-world/">
+        Hello World →
+    </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/11/11/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2016/11/11/hello-world/"></div>
+<div class="ds-thread" data-thread-key="2016/11/11/CoreData的初级使用/" data-title="CoreData的初级使用" data-url="http://yoursite.com/2016/11/11/CoreData的初级使用/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"duoshuo_name"};
 (function() {
