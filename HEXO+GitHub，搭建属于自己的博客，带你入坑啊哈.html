@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -204,236 +204,134 @@
 <!-- // End height spacing helper -->
 
 <!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/">HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T15:38:21.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈
-先讲明步骤哦，一步一步来，别慌，遇到什么问题各种Google解决就行啊，我是基于mac写的，写说下自己也入坑了，而且看了好几个大神的博客才弄好，而且中途也弄错了，即使现在也没怎么搞好，不过，一步一步来哈。加油，自己！！！
-
-安装Node
-在Node.js官网下载对应平台的版本，然后一直点击继续安装安装哦！
-
-
-安装Git，一般安装Xcode自带Git，但是如果没有事windows
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+                <h1></h1>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/学习XML解析基础篇/">学习XML解析基础篇</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T14:50:59.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        XML解析
-SAX解析
+        <div class="col-md-8 col-md-offset-2">
+            <h1 id="HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈"><a href="#HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈" class="headerlink" title="HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈"></a>HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈</h1><ul>
+<li><p>先讲明步骤哦，一步一步来，别慌，遇到什么问题各种Google解决就行啊，我是基于mac写的，写说下自己也入坑了，而且看了好几个大神的博客才弄好，而且中途也弄错了，即使现在也没怎么搞好，不过，一步一步来哈。加油，自己！！！</p>
+</li>
+<li><p>安装Node</p>
+<p>在<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js官网</a>下载对应平台的版本，然后一直点击继续安装安装哦！</p>
+<p><img src="/Users/juju/Documents/iOS/BLOG/source/_posts/node.png" alt=""></p>
+</li>
+<li><p>安装Git，一般安装<a href="https://developer.apple.com/xcode/" target="_blank" rel="external">Xcode</a>自带<a href="http://rj.baidu.com/soft/detail/30195.html?ald" target="_blank" rel="external">Git</a>，但是如果没有事windows的电脑请自行下载哦</p>
+</li>
+<li><p>有一个<a href="https://github.com/" target="_blank" rel="external">GitHub</a>的账号，自我认为GitHub是必用学习网站之一，作为渣渣的我也比较喜欢的。</p>
+</li>
+<li><p>此时需要本地的hexo与github建立连接，你可以去网上搜一下就明白了，如果不配置，也只是在搭建成功写博客时提交时输入账号密码就可以了。</p>
+</li>
+<li><p>正式安装Hexo，</p>
+<ul>
+<li>打开客户端<code>$ sudo npm install -g hexo</code></li>
+</ul>
+</li>
+<li><p>初始化</p>
+<ul>
+<li>创建一个文件夹，然后在客户端cd到这个文件夹下</li>
+<li>输入命令<code>$ hexo init</code></li>
+</ul>
+</li>
+<li><p>生成静态页面哈，此时前面的工作完成啦！</p>
+<ul>
+<li>输入命令<code>$ hexo g (hexo generate 也可以哦)</code></li>
+</ul>
+</li>
+<li><p>本地启动，可以运行本地服务器，进行页面预览哒！</p>
+<ul>
+<li>输入命令<code>$ hexo s (hexo server也可以哦)</code>此时<img src="/Users/juju/Documents/iOS/BLOG/source/_posts/hexo server.png" alt="">图片如图这样，就表示启动成功，访问<a href="http//localhost:4000"></a>看能不能显示页面，不行的话，再检查前面配置是否成功，不行的话再重新修改下。</li>
+</ul>
+</li>
+<li><p>配置GitHub，建立Repository，仓库名必须是【userName.github.io】(userName是你GitHub的名称)，这是一个固定的写法，这样写就好啦。</p>
+</li>
+<li><p>进入通过<code>hexo init</code>建立的blog文件夹，找到<code>-config.yml</code>打开修改：</p>
+<ul>
+<li><p>找到最下面deploy哪里，修改如下：<code>其中，冒号：后面一定要有空格</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">//type后写git，有的也可以写github.com.git，不过就写git就好啦，因为大神这么写的，我还渣。</div><div class="line">  type: git</div><div class="line">  //这里的创库链接，就是你在GitHub上创建的那个仓库链接</div><div class="line">  repository: https://github.com/leopardpan/leopardpan.github.io.git</div><div class="line">  //这里就写这个就好啦，固定的</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>执行<code>$ npm install hexo-deployer-git --save</code>部署文件</p>
+</li>
+<li><p>执行<code>$ hexo deploy</code>就可以通过userName.github.io进行访问你的博客啦！（userName就是之前你的账户名称）</p>
+</li>
+<li><p>如果要写博客可以进行以下操作即可</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;postName&quot; #新建文章</div><div class="line">hexo generate #生成静态页面至public目录</div><div class="line">hexo deploy #将.deploy目录部署到GitHub</div><div class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</div><div class="line"></div><div class="line">或者</div><div class="line">hexo new &quot;postName&quot; #新建文章</div><div class="line">hexo d -g</div><div class="line">hexo s</div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
 
-写一个本地xml数据    
-1234567891011121314151617&lt;students&gt;    &lt;student&gt;        &lt;name&gt;Juju&lt;/name&gt;        &lt;sex&gt;Female&lt;/sex&gt;        &lt;age&gt;20&lt;/age&gt;    &lt;/student&gt;    &
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/学习XML解析基础篇/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
+            <div class="clearfix"></div>
         </div>
         
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/学习JSON解析基础篇/">学习JSON解析基础篇</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T14:50:42.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        学习JSON解析
-系统在带的JSON解析
-
-首先先创建空文件写入json数据
-1234567891011121314151617[&#123;&quot;name&quot; : &quot;小明&quot;,&quot;gender&quot; : &quot;男&quot;,&quot;age&quot; : &quot;12&quot;&#125;,&#123;&quot;name&quot; : &quot;小红&quot;,&
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/学习JSON解析基础篇/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/数据持久化的方式/">数据持久化的方式</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T14:49:36.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        数据持久化的方式
-文件读写（NSString、NSArray、NSDictionary、NSData）
-归档
-NSUserDefaults
-SQLite
-SQL 结构化查询语言
-
-
-
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/数据持久化的方式/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/CoreData的初级使用/">CoreData的初级使用</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T14:34:51.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        CoreData_Study
-在创建工程的时候，一定要选CoreData！一定要选CoreData！一定要选CoreData！
-
-进行storyboard的页面设置，创建tableView控件，
-
-将方法拖拽到ViewController中，进行实现，其中，引入了
-123@property (strong, nonatomic) IBOutlet UITableView *tableView;- (IBAction)addModel:(
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/CoreData的初级使用/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/hello-world/">Hello World</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T12:44:21.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/hello-world/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          
-        </nav>
     </div>
 </section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+<section id="process">
+    <div class="container">
         <div class="row">
-            <p></p>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                <div class="timeline-centered">
+                    <div class="line"></div>
+                    <div class="present">Past</div>
+                    <div class="dot_tp"></div>
+                    <div class="born">Now</div>
+                    <div class="dot_bt"></div>
+                    
+                        <div class="timeline-entry">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                    <span class="number">1</span>
+                                </div>
+                                <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                    <p>2014/06/12-Start</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="timeline-entry">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                    <span class="number">2</span>
+                                </div>
+                                <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                    <p>2014/11/29-XXX</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="timeline-entry">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                    <span class="number">3</span>
+                                </div>
+                                <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                    <p>2015/02/18-DDD</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="timeline-entry">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                    <span class="number">4</span>
+                                </div>
+                                <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                    <p>More</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+                <!-- timeline-centered -->
+            </div>
         </div>
     </div>
 </section>
-<!-- ============================ END Content =========================== -->
 
       
 <!-- ============================ Footer =========================== -->
