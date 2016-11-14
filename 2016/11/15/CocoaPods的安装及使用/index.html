@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>CocoaPods的安装及使用 | Juju</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Juju">
+    <meta name="author" content="Juju">
+    <meta name="description" content="The Lucky You Can Get" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Juju" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="" class="animsition-link">null</a></li>
+                    
+                    <li><a href="" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Juju</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Jujuxw" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://www.weibo.com/1785406062" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-11-14T17:23:36.000Z" itemprop="datePublished">
+          2016-11-15
+      </time>
+    
+</span>
+                <h1>CocoaPods的安装及使用</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="CocoaPods安装及使用"><a href="#CocoaPods安装及使用" class="headerlink" title="CocoaPods安装及使用"></a><a href="http://www.cnblogs.com/eagley/p/5407721.html" target="_blank" rel="external">CocoaPods安装及使用</a></h1><p>​    <strong>本文转自<a href="http://www.cnblogs.com/eagley/" target="_blank" rel="external">eagley</a>的博客,需看<a href="http://www.cnblogs.com/eagley/p/5407721.html" target="_blank" rel="external">原文</a>请点击查看！</strong></p>
+<p>　　CocoaPods是ios开发平台一个非常流行的第三方库管理工具。在开发过程中，根据项目复杂程度，通常我们会需要外链很多的第三方库。而添加这些第三方库的过程有时候会变成一场灾难。因此使用CocoaPods来代替我们管理这些库，将可以大幅缩短我们的开发时间。</p>
+<p>　　在使用CocoaPods的时候我们并不需要关注它的原理，简单来讲它相当于将github上的第三方库checkout到你的项目工程目录中，再直接将这些库的链接添加到你的工程中。并且之后你也可以通过简单的命令对这些库进行更新。</p>
+<p>　　以下就来了解一下CocoaPods的安装过程以及使用方法：</p>
+<p><strong>1.环境配置</strong></p>
+<p>　　笔者使用的开发环境是Mac OS X 10.11，XCode 7.3。CocoaPods的安装和使用需要有Ruby环境（Mac系统默认安装了Ruby环境，如果系统没有Ruby环境的可以去百度，有很多相关的文档）。不确定自己系统中是否有Ruby的，可以在终端中输入命令行：ruby -v查看当前ruby版本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ruby -v</div><div class="line">ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15]</div></pre></td></tr></table></figure>
+<p>　　如果确认系统中已经有Ruby环境的，就可以继续下面的安装步骤了。</p>
+<p><strong>1.安装</strong></p>
+<p>　　CocoaPods的安装是非常简单的，但是前提是你的网速够快并且能绕过GFW（这就是为什么程序员必须要有vpn）。</p>
+<p>　　确保网速够快（能绕过GFW）的，可以直接执行下面命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo gem install cocoapods</div></pre></td></tr></table></figure>
+<p>　　如果执行了这句命令以后，终端很长时间都没有反应，那么就可以确定你没有绕过GFW了。这样的话你就需要按照以下步骤进行安装了：</p>
+<p>　　首先，检查你的ruby源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$gem sources -l</div></pre></td></tr></table></figure>
+<p>　　默认情况下，终端应该返回如下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*** CURRENT SOURCES ***</div><div class="line"></div><div class="line">https://rubygems.org/</div></pre></td></tr></table></figure>
+<p>　　当然这个源在墙内是访问不到的。因此我们需要寻找一个可以在国内访问到的镜像。目前笔者找到的是<a href="http://rubygems-china.oss.aliyuncs.com这个阿里云的镜像，当然随着时间的推移，未来这个镜像也有可能无法访问了，到时候就只能重新寻找了。" target="_blank" rel="external">http://rubygems-china.oss.aliyuncs.com这个阿里云的镜像，当然随着时间的推移，未来这个镜像也有可能无法访问了，到时候就只能重新寻找了。</a></p>
+<p>　　确认镜像可用后，现在就要开始修改ruby源了。首先执行以下命令删除原来的ruby源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$gem sources --remove https://rubygems.org/</div></pre></td></tr></table></figure>
+<p>　　执行命令后可在终端看见以下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://rubygems.org/ removed from sources</div></pre></td></tr></table></figure>
+<p>　　然后下一步添加你找到的可用的镜像源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$gem sources -a http://rubygems-china.oss.aliyuncs.com</div></pre></td></tr></table></figure>
+<p>　　此时如果你再执行gem sources -l命令，就能看到当前镜像源里只有阿里云这一个了。此时你就可以重新执行这一段开头的那句命令了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo gem install cocoapods</div></pre></td></tr></table></figure>
+<p>　　如果一切正常，你应该能看到一段安装进度，以及最后有一条信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3 gems installed</div></pre></td></tr></table></figure>
+<p>　　确认看见这条信息，就说明你的安装已经成功了，接下去就可以开始准备在你的项目中使用CocoaPods了。</p>
+<p><strong>2.使用</strong></p>
+<p>　　CocoaPods的使用我们以一个ios上非常通用的AFNetworking为例。首先，你需要检查你要添加的第三方库是否支持CocoaPods。在终端中执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pod search AFNetworking</div></pre></td></tr></table></figure>
+<p>　　执行以后你应该能看到类似如下的一些关于AFNetworking库的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">-&gt; AFNetworking (3.1.0)</div><div class="line">   A delightful iOS and OS X networking framework.</div><div class="line">   pod &apos;AFNetworking&apos;, &apos;~&gt; 3.1.0&apos;</div><div class="line">   - Homepage: https://github.com/AFNetworking/AFNetworking</div><div class="line">   - Source:   https://github.com/AFNetworking/AFNetworking.git</div><div class="line">   - Versions: 3.1.0, 3.0.4, 3.0.3, 3.0.2, 3.0.1, 3.0.0, 3.0.0-beta.3,</div><div class="line">   3.0.0-beta.2, 3.0.0-beta.1, 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.4, 2.5.3, 2.5.2,</div><div class="line">   2.5.1, 2.5.0, 2.4.1, 2.4.0, 2.3.1, 2.3.0, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0,</div><div class="line">   2.1.0, 2.0.3, 2.0.2, 2.0.1, 2.0.0, 2.0.0-RC3, 2.0.0-RC2, 2.0.0-RC1, 1.3.4,</div><div class="line">   1.3.3, 1.3.2, 1.3.1, 1.3.0, 1.2.1, 1.2.0, 1.1.0, 1.0.1, 1.0, 1.0RC3, 1.0RC2,</div><div class="line">   1.0RC1, 0.10.1, 0.10.0, 0.9.2, 0.9.1, 0.9.0, 0.7.0, 0.5.1 [master repo]</div><div class="line">   - Subspecs:</div><div class="line">     - AFNetworking/Serialization (3.1.0)</div><div class="line">     - AFNetworking/Security (3.1.0)</div><div class="line">     - AFNetworking/Reachability (3.1.0)</div><div class="line">     - AFNetworking/NSURLSession (3.1.0)</div><div class="line">     - AFNetworking/UIKit (3.1.0)</div></pre></td></tr></table></figure>
+<p>　　确认AFNetworking库支持CocoaPods后，接下去我们就可以开始做添加操作了。</p>
+<p>　　首先在XCode中新建一个project，笔者在这里命名为CocoaPodsTest。然后，在终端中cd到你的project所在的目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$cd /CocoaPodsTest</div></pre></td></tr></table></figure>
+<p>　　然后，执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$vim Podfile</div></pre></td></tr></table></figure>
+<p>　　添加一个Podfile文件。然后按i进入插入模式，进行编辑，在文件中输入以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">platform :ios, &apos;8.1&apos;</div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt; 2.0&apos;</div></pre></td></tr></table></figure>
+<p>　　输入完成后按ESC退出编辑模式，最后输入:wq保存并退出文件。此时可以发现在项目目录下多了一个Podfile的文件，请注意这个文件必须与.xcodeproj在同一目录下。</p>
+<p>　　（眼尖的朋友可能已经发现了，笔者这里使用的AFNetworking是2.0版本，而search出来的最新版本是3.1.0。这是为了下面执行update方便而进行的设置，这里可以直接填3.1.0）</p>
+<p>　　不要改变终端中的当前目录，执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pod install</div></pre></td></tr></table></figure>
+<p>　　就可以在当前项目中添加CocoaPods支持。安装完成后可以看到如下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[!] Please close any current Xcode sessions and use CocoaPodsTest.xcworkspace for this project from now on.</div><div class="line"></div><div class="line">Sending stats</div><div class="line"></div><div class="line">Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.</div></pre></td></tr></table></figure>
+<p>　　该信息表示CocoaPods已成功添加到当前项目中。同时“1 dependency from the Podfile”的意思就是Podfile文件中的AFNetworking库也添加完毕。同时在项目目录下你能发现多了Pods目录以及一个.xcworkspace文件。上面[!]后面提示的信息表示你需要在XCode中关闭现在这个CocoaPodsTest.xcodeproj，并且以后使用CocoaPodsTest.xcworkspace文件打开工程。</p>
+<p>　　这个时候你打开xcworkspace，应该可以看见Pods已经被添加到工程，并且在Pods组里面，也包含了AFNetworking库。</p>
+<p><img src="http://images2015.cnblogs.com/blog/133248/201604/133248-20160419120817210-1832791126.png" alt="img"></p>
+<p>　　这样，我们就完成了CocoaPods从安装到添加到工程的整个流程。而对于已经使用了CocoaPods的工程，可以通过CocoaPods的update功能直接更新包含的第三方库。</p>
+<p><strong>3.更新</strong></p>
+<p>　　CocoaPods可以非常简单的使用update语句直接更新所有第三方库，以下仍然使用AFNetworking为例。</p>
+<p>　　首先，我们可以看到前面笔者使用的AFNetworking库，是使用的2.0版本。然而pod search AFNetworking命令执行的时候，能看到AFNetworking目前最新的版本是3.1.0。接下去我们就来看要如何将目前的第三方库版本更新到最新的版本。</p>
+<p>　　同样先cd到项目目录下，并且开始编辑Podfile文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd /CocoaPodsTest</div><div class="line">$vim Podfile</div></pre></td></tr></table></figure>
+<p>　　将Podfile文件中AFNetworking这一行的2.0改成3.1.0：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">platform :ios, &apos;8.1&apos;</div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt; 3.1.0&apos;</div></pre></td></tr></table></figure>
+<p>　　修改完成后，按ESC退出编辑模式，最后输入:wq保存并退出文件。</p>
+<p>　　然后回到终端，执行以下命令就可以开始更新了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pod update</div></pre></td></tr></table></figure>
+<p>　　可以看到在返回的信息中有一行绿色的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Installing AFNetworking 3.1.0 (was 2.6.3)</div></pre></td></tr></table></figure>
+<p>　　这就表示项目中的AFNetworking库已经更新到3.1.0版本了。</p>
+<p><strong>4.小结</strong></p>
+<p>　　CocoaPods的功能非常强大，更高级的使用需求可以访问CocoaPods的官网<a href="https://cocoapods.org/" target="_blank" rel="external">https://cocoapods.org/</a> 查找更多功能。另外在<a href="https://github.com/CocoaPods/CocoaPods/wiki" target="_blank" rel="external">https://github.com/CocoaPods/CocoaPods/wiki</a> 也可以获得更多信息。</p>
+<p>　　本文参考了</p>
+<p>　　<a href="http://cnbin.github.io/blog/2015/05/25/cocoapods-an-zhuang-he-shi-yong/" target="_blank" rel="external">http://cnbin.github.io/blog/2015/05/25/cocoapods-an-zhuang-he-shi-yong/</a></p>
+<p>　　<a href="http://code4app.com/article/cocoapods-install-usage" target="_blank" rel="external">http://code4app.com/article/cocoapods-install-usage</a></p>
+<p>　　两位分享的内容，在这里致以诚挚的谢意。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/">
+        HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/11/15/CocoaPods的安装及使用/" data-title="CocoaPods的安装及使用" data-url="http://yoursite.com/2016/11/15/CocoaPods的安装及使用/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Juju. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Jujuxw" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://www.weibo.com/1785406062" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
