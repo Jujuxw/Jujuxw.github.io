@@ -212,6 +212,39 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/2016/11/22/手工内存管理规则的总结/">手工内存管理规则的总结</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2016-11-22T14:40:59.000Z" itemprop="datePublished">
+          2016-11-22
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        手工内存管理规则的总结
+如果需要保持一个对象不被销毁，可以使用retain。在使用对象后，需要使用release进行释放
+给对象发送release消息并不会销毁这个对象，只当这个对象的引用计数减至0时，对象才会被销毁。然后系统会发送dealloc消息给这个对象用于释放它的内存
+对使用了retain或者copy、mutableCopy、alloc或new方法的任何对象，以及具有retain和copy特性的属性进行释放，需要覆盖deallo
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2016/11/22/手工内存管理规则的总结/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/2016/11/15/CocoaPods的安装及使用/">CocoaPods的安装及使用</a></h3>
                     <span>
                         <span class="post-meta">
