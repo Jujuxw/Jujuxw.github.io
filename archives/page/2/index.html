@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>NSOperation相关概念 | Juju</title>
+  <title>Archives | Juju</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -174,113 +174,69 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2017-01-03T02:24:20.000Z" itemprop="datePublished">
-          2017-01-03
-      </time>
-    
-</span>
-                <h1>NSOperation相关概念</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<ul>
-<li>配合使用NSOperation和NSOperationQueue也可以实现多线程<ul>
-<li>先将需要执行的操作封装到一个NSOperation对象中</li>
-<li>将NSOperation对象添加到一个NSOperationQueue对象中</li>
-<li>系统会自动将NSOperationQueue中的NSOperation取出来</li>
-<li>将取出的NSOperation封装的操作放到一条线程中去执行</li>
-</ul>
-</li>
-<li><p>抽象类，并不具有封装操作的能力，必须使用它的子类：</p>
-<ul>
-<li><p>NSInvocationOperation</p>
-<ul>
-<li><p>创建NSInvocationOperation对象</p>
-<ul>
-<li><figure class="highlight plain"><figcaption><span>*ip =[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(operation) object:nil] ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">  - 调用start方法</div><div class="line">    - `[ip start]`</div><div class="line">    - 一旦执行操作，就回调用target的selector方法</div><div class="line">  - 注意</div><div class="line">    - 默认情况下，调用start方法后并不会开启一条新的线程去执行操作，而是在当前线程同步执行操作</div><div class="line">    - 只有将NSOperation放到NSOperationQueue中，才会异步执行操作</div><div class="line"></div><div class="line">- NSBlockOperation</div><div class="line"></div><div class="line">  - 创建NSBlockOperation对象</div><div class="line"></div><div class="line">    -</div></pre></td></tr></table></figure>
-<p>NSBlockOperation *bp = [NSBlockOperation blockOperationWithBlock:^{</p>
-<pre><code>//在此封装操作
-}];
-</code></pre><p>```</p>
-<p>​    </p>
-</li>
-</ul>
-</li>
-<li><p>通过addExutionBlock:方法添加</p>
-<ul>
-<li><code>[bp addExecutionBlock:^{//额外的操作}]</code></li>
-</ul>
-</li>
-<li><p>注意</p>
-<ul>
-<li>只要NSBlockOperation封装的操作大于1，就回开启线程，异步执行</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>NSOperationQueue</p>
-<ul>
-<li>只有将NSOperation放到NSOperationQueue中，才会异步执行操作</li>
-<li>添加到NSOperationQueue<ul>
-<li>调用addOperation：方法</li>
-<li>调用addOperationWithBlock：方法</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>自定义子类继承自NSOperation，实现内部相应的方法</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>任务依赖—-如果A依赖B，等B执行完成之后在执行A<ul>
-<li>任务之间不能相互依赖</li>
-<li>addDependency:前者依赖于后者，后者先执行，再执行前者</li>
-</ul>
-</li>
-</ul>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
-    
-    <a class="pull-left" href="/2017/01/03/RunLoop概念/" style="float: left;">
-        ← RunLoop概念
-    </a>
-    
-    
-    <a class="pull-right" href="/2016/11/27/多线程及其相关的概念/">
-        多线程及其相关的概念 →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2017/01/03/NSOperation相关概念/" data-title="NSOperation相关概念" data-url="http://yoursite.com/2017/01/03/NSOperation相关概念/"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"duoshuo_name"};
-(function() {
-	var ds = document.createElement('script');
-	ds.type = 'text/javascript';ds.async = true;
-	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	ds.charset = 'UTF-8';
-	(document.getElementsByTagName('head')[0] 
-	 || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2016/11/11/hello-world/">Hello World</a></h4>
+                            
+                            <p><time datetime="2016-11-11T12:44:21.000Z"><a href="/2016/11/11/hello-world/">2016-11-11</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p></p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 

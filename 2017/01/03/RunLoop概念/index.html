@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>NSOperation相关概念 | Juju</title>
+  <title>RunLoop概念 | Juju</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -180,69 +180,88 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2017-01-03T02:24:20.000Z" itemprop="datePublished">
+      <time datetime="2017-01-03T02:26:05.000Z" itemprop="datePublished">
           2017-01-03
       </time>
     
 </span>
-                <h1>NSOperation相关概念</h1>
+                <h1>RunLoop概念</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
       		<ul>
-<li>配合使用NSOperation和NSOperationQueue也可以实现多线程<ul>
-<li>先将需要执行的操作封装到一个NSOperation对象中</li>
-<li>将NSOperation对象添加到一个NSOperationQueue对象中</li>
-<li>系统会自动将NSOperationQueue中的NSOperation取出来</li>
-<li>将取出的NSOperation封装的操作放到一条线程中去执行</li>
+<li>概述<ul>
+<li>运行循环</li>
+<li>由do-while循环实现</li>
 </ul>
 </li>
-<li><p>抽象类，并不具有封装操作的能力，必须使用它的子类：</p>
+<li>作用<ul>
+<li>保证程序的持续运行</li>
+<li>处理APP的各种事件（滑动，定时器，selector）</li>
+<li>节省CPU资源，提高程序性能</li>
+<li>Foundation<ul>
+<li>NSRunLoop（OC语言）</li>
+</ul>
+</li>
+<li>Core Foundation<ul>
+<li>CFRunLoopRef（C语言）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>相关类：没有以下类，不会循环</p>
 <ul>
-<li><p>NSInvocationOperation</p>
+<li><p>CFRunLoopModeRef</p>
 <ul>
-<li><p>创建NSInvocationOperation对象</p>
+<li>代表了RunLoop的运行模式</li>
+<li>一个RunLoop可以包含若干个Mode，每个Mode包含若干个Source/Timer/Observe</li>
+<li>每次RunLoop启动时，只能指定其中的一个Mode，这个Mode被称作currentMode</li>
+<li><strong>KCFRunLoopDefaultMode</strong>：APP的默认Mode，通常主线程是在该Mode下运行的</li>
+<li><strong>UITrackingRunLoopMode</strong>：界面跟踪Mode，用于ScrollView追踪触摸滑动，保证界面滑动时，不受其他Mode影响</li>
+<li>UIInitialzationRunLoopMode：在刚启动时APP进入的第一个Mode，启动完成后就不再使用</li>
+<li>GSEventReceiveRunLoopMode：接受系统事件的内部Mode，通常情况下不用</li>
+<li><strong>KCFRunLoopCommonModes</strong>：这是一个占位用的Mode，不是真正的Mode</li>
+</ul>
+</li>
+<li><p>CFRunLoopSourceRef</p>
 <ul>
-<li><figure class="highlight plain"><figcaption><span>*ip =[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(operation) object:nil] ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">  - 调用start方法</div><div class="line">    - `[ip start]`</div><div class="line">    - 一旦执行操作，就回调用target的selector方法</div><div class="line">  - 注意</div><div class="line">    - 默认情况下，调用start方法后并不会开启一条新的线程去执行操作，而是在当前线程同步执行操作</div><div class="line">    - 只有将NSOperation放到NSOperationQueue中，才会异步执行操作</div><div class="line"></div><div class="line">- NSBlockOperation</div><div class="line"></div><div class="line">  - 创建NSBlockOperation对象</div><div class="line"></div><div class="line">    -</div></pre></td></tr></table></figure>
-<p>NSBlockOperation *bp = [NSBlockOperation blockOperationWithBlock:^{</p>
-<pre><code>//在此封装操作
-}];
-</code></pre><p>```</p>
-<p>​    </p>
+<li>事件源，也可称之为输入源</li>
+<li>按官方文档分类，可分为3类：<ul>
+<li>Port-Based Sources 从其他线程或内核发出的</li>
+<li>Custome input Sources 自定义的</li>
+<li>CoCoa Perform Selector Sources</li>
+<li>按函数调用栈分类，可分为2类：<ul>
+<li>Sources0：非基于Port类的(点击事件)</li>
+<li>Sources1：基于Port，通过其他线程或者内核通信，接收，分发系统事件</li>
+</ul>
 </li>
 </ul>
 </li>
-<li><p>通过addExutionBlock:方法添加</p>
+</ul>
+</li>
+<li><p>CFRunLoopTimerRef</p>
 <ul>
-<li><code>[bp addExecutionBlock:^{//额外的操作}]</code></li>
+<li>基于时间的触发器</li>
 </ul>
 </li>
-<li><p>注意</p>
+<li><p>CFRunLoopObserverRef</p>
 <ul>
-<li>只要NSBlockOperation封装的操作大于1，就回开启线程，异步执行</li>
-</ul>
+<li><p>观察者，能监听RunLoop的状态的改变</p>
 </li>
-</ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity)&#123;</div><div class="line">  KCFRunLoopEntry = (1UL &lt;&lt; 0),//即将进入RunLoop</div><div class="line">  KCFRunLoopBeforeTimers = (1UL &lt;&lt; 1),//即将处理RunLoop</div><div class="line">  KCFRunLoopBeforeSources = (1UL &lt;&lt; 2),//即将处理Sources</div><div class="line">  KCFRunLoopBeforeWaiting = (1UL &lt;&lt; 5),//即将进入休眠</div><div class="line">  KCFRunLoopAfterWaiting = (1UL &lt;&lt; 6),//即将从休眠中唤醒</div><div class="line">  KCFRunLoopExit = (1UL &lt;&lt; 7),//即将退出RunLoop</div><div class="line">  KCFRunLoopAllActivities = OxOFFFFFFFU//活跃中</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 </li>
-<li><p>NSOperationQueue</p>
-<ul>
-<li>只有将NSOperation放到NSOperationQueue中，才会异步执行操作</li>
-<li>添加到NSOperationQueue<ul>
-<li>调用addOperation：方法</li>
-<li>调用addOperationWithBlock：方法</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>自定义子类继承自NSOperation，实现内部相应的方法</p>
+<li><p>​</p>
 </li>
 </ul>
 </li>
 </ul>
-<ul>
-<li>任务依赖—-如果A依赖B，等B执行完成之后在执行A<ul>
-<li>任务之间不能相互依赖</li>
-<li>addDependency:前者依赖于后者，后者先执行，再执行前者</li>
+</li>
+<li>RunLoop与线程<ul>
+<li>每条线程都有唯一的一个与之对应的RunLoop对象</li>
+<li>主线程的RunLoop随着程序已自动创建好，但是子线程的RunLoop需要自动创建</li>
+<li>获得主线程的RunLoop的方法是：<code>[NSRunLoop mainRunLoop]</code></li>
+<li>创建子线程RunLoop的方法是：<code>[NSRunLoop currentRunLoop]</code>(其中原理可以在CFRunLoop中查看)</li>
+<li>苹果不允许创建RunLoop，只提供上述两种获得RunLoop的方法 <img src="多线程15_RunLoop_Observer_source.png" alt="多线程15_RunLoop_Observer_source"></li>
 </ul>
 </li>
 </ul>
@@ -252,19 +271,15 @@
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2017/01/03/RunLoop概念/" style="float: left;">
-        ← RunLoop概念
-    </a>
     
-    
-    <a class="pull-right" href="/2016/11/27/多线程及其相关的概念/">
-        多线程及其相关的概念 →
+    <a class="pull-right" href="/2017/01/03/NSOperation相关概念/">
+        NSOperation相关概念 →
     </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2017/01/03/NSOperation相关概念/" data-title="NSOperation相关概念" data-url="http://yoursite.com/2017/01/03/NSOperation相关概念/"></div>
+<div class="ds-thread" data-thread-key="2017/01/03/RunLoop概念/" data-title="RunLoop概念" data-url="http://yoursite.com/2017/01/03/RunLoop概念/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"duoshuo_name"};
 (function() {
