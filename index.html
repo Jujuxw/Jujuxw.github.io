@@ -1,692 +1,1053 @@
 <!DOCTYPE html>
-<!--[if lte IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--
-***************  *      *     *
-      8          *    *       *
-      8          *  *         *
-      8          **           *
-      8          *  *         *
-      8          *    *       *
-      8          *      *     *
-      8          *        *   ***********    -----
--->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<!--<![endif]-->
-
+<html>
 <head>
+  <meta charset="utf-8">
+  
   <title>Juju</title>
-  <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Juju">
-    <meta name="author" content="Juju">
-    <meta name="description" content="The Lucky You Can Get" />
-    <meta name="keywords" content="" />
-
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Juju">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Juju">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Juju">
+  
     <link rel="alternate" href="/atom.xml" title="Juju" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-	
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
-    
-
-    <!-- Custom stylesheet, (add custom styles here, always load last) -->
-    <!-- Load our stylesheet for IE8 -->
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
-
-    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
-    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-
-    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
-    <!--[if IE]>
-    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
-    <![endif]-->
-
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <![endif]-->
-
-
-
-
-
-
-
-
-
-
   
   
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
   
 
-  
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
-<!--
-<body class="home-template">
--->
-<body id="index" class="lightnav animsition">
-
-      <!-- ============================ Off-canvas navigation =========================== -->
-
-    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
-        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-            <img src="/img/close.png" alt="Close"/>
-        </div>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
-            <!-- Dropdown Menu -->
-			 
-            
-            
-            <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                    <li><a href="" class="animsition-link">null</a></li>
-                    
-                    <li><a href="" class="animsition-link">Name</a></li>
-                    
-                </ul>
-            </li>
-            
-        </ul>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu secondary">
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
-        </ul>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Juju</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The Lucky You Can Get</a>
+        </h2>
+      
     </div>
-    
-    <!-- ============================ END Off-canvas navigation =========================== -->
-
-    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
-
-    <div id="sb-site">
-        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-        <div id="navigation" class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <!-- Nav logo -->
-                    <div class="logo">
-                        <a href="/" title="Logo" class="animsition-link">
-                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
-                        </a>
-                    </div>
-                    <!-- // Nav logo -->
-                    <!-- Info-bar -->
-                    <nav>
-                        <ul class="nav">
-                            <li><a href="/" class="animsition-link">Juju</a></li>
-                            <li class="nolink"><span>Always </span>Creative.</li>
-                            
-                            <li><a href="https://github.com/Jujuxw" title="Github" target="_blank"><i class="icon-github"></i></a></li>
-                            
-                            
-                            
-                            
-                            
-                            <li><a href="http://www.weibo.com/1785406062" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
-                            
-                            <li class="nolink"><span>Welcome!</span></li>
-                        </ul>
-                    </nav>
-                    <!--// Info-bar -->
-                </div>
-                <!-- // .container -->
-                <div class="learnmore sb-toggle-right">More</div>
-                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar before"></span>
-                <span class="icon-bar main"></span>
-                <span class="icon-bar after"></span>
-                </button>
-            </div>
-            <!-- // .navbar-inner -->
-        </div>
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
     </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
-<section id="intro">
-    <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/02/16/SDWebImage-转/">SDWebImage(转)</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-02-16T14:02:49.000Z" itemprop="datePublished">
-          2017-02-16
-      </time>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-SDWebImage-转" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/16/SDWebImage-转/" class="article-date">
+  <time datetime="2017-02-16T14:02:49.000Z" itemprop="datePublished">2017-02-16</time>
+</a>
     
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        SDWebImage(转)
-功能
-
-扩展UIImageView，UIButton，MKAnnotationView，增加网络图片与缓存管理
-一个异步的图片管理器
-一个 异步+磁盘 图片缓存，拥有自动的缓存过期处理机制
-支持后台图片解压缩处理
-确保同一个URL的图片不被下载多次
-确保虚假的URL不会被反复下载
-确保下载与缓存时，主线程不被阻塞
-使用GCD与ARC
-
-
-组织架构
-
-SDWebImageDownloader负责维持图片的下载队
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/02/16/SDWebImage-转/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/03/赴美带薪实习感悟/">赴美带薪实习感悟</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-03T02:35:53.000Z" itemprop="datePublished">
-          2017-01-03
-      </time>
+  </div>
+  <div class="article-inner">
     
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        赴美带薪实践
-你会向陌生人say hello，say morning么？你会在上下bus的时候向老司机们say thank you或者have a good day么？你会在行走的时候随时向擦身而过的人say excuse me 或者I‘m sorry么？你会在吃饭的时候向你的waiter说无数个Thank you very much并且付账的时候给她们很多小费么？
-在中国是不是都不会的，因为大家不讲英语对不对！嘿嘿嘿，这只是一个玩笑，
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/03/赴美带薪实习感悟/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/03/Juju简历-求实习呀！/">Juju简历--求实习呀！</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-03T02:28:52.000Z" itemprop="datePublished">
-          2017-01-03
-      </time>
     
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/03/Juju简历-求实习呀！/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
+      <header class="article-header">
         
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/03/场景之间的跳转-更新/">场景之间的跳转(更新)</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-03T02:27:44.000Z" itemprop="datePublished">
-          2017-01-03
-      </time>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/16/SDWebImage-转/">SDWebImage(转)</a>
+    </h1>
+  
+
+      </header>
     
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-直接跳转——控件拖拽（基于View创建）
-push
-modal：如果A—&gt;B此模式，无法自动返回A，需要额外写代码
-
-
-条件跳转法（performSegueWithIdentifier）——只有在满足特定条件下，才跳转到下一个（基于ViewControl创建）
-手动代码跳转法——Segue不存在情况下，也可以跳转到指定的ViewControl
-设置identifier
-
-
-
-
-逆向跳转——即A—&gt;B后，再B—&gt;A
-
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/03/场景之间的跳转-更新/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/03/RunLoop概念/">RunLoop概念</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-03T02:26:05.000Z" itemprop="datePublished">
-          2017-01-03
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-概述
-运行循环
-由do-while循环实现
-
-
-作用
-保证程序的持续运行
-处理APP的各种事件（滑动，定时器，selector）
-节省CPU资源，提高程序性能
-Foundation
-NSRunLoop（OC语言）
-
-
-Core Foundation
-CFRunLoopRef（C语言）
-
-
-
-
-相关类：没有以下类，不会循环
-
-CFRunLoopModeRef
-
-代表了RunLoop的运行模式
-一个RunLoop可以包含若干个Mode，每
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/03/RunLoop概念/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/03/NSOperation相关概念/">NSOperation相关概念</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-03T02:24:20.000Z" itemprop="datePublished">
-          2017-01-03
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-配合使用NSOperation和NSOperationQueue也可以实现多线程
-先将需要执行的操作封装到一个NSOperation对象中
-将NSOperation对象添加到一个NSOperationQueue对象中
-系统会自动将NSOperationQueue中的NSOperation取出来
-将取出的NSOperation封装的操作放到一条线程中去执行
-
-
-抽象类，并不具有封装操作的能力，必须使用它的子类：
-
-NSInvocatio
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/03/NSOperation相关概念/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/27/多线程及其相关的概念/">多线程及其相关的概念</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-27T08:30:47.000Z" itemprop="datePublished">
-          2016-11-27
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        多线程及其相关的概念
-进程
-
-进程是指在系统正在运行的一个应用程序
-
-
-
-
-比如同时打开微信、QQ，系统就会分别启动两个进程
-每个进程之间是独立的，且运行在其专用并受保护的内存空间内
-
-
-线程
-
-线程是进程的基本执行单元，一个进程想要执行任务，必须的有线程（一个进程至少有一个线程）
-比如qq进行文字聊天，使用微信进行视频聊天，都需要在线程中执行
-
-
-线程的串行
-
-如果一个线程中执行多个任务，那么只能一个一个的按顺序执行，也就是说，在同一
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/27/多线程及其相关的概念/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/22/手工内存管理规则的总结/">手工内存管理规则的总结</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-22T14:40:59.000Z" itemprop="datePublished">
-          2016-11-22
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        手工内存管理规则的总结
-如果需要保持一个对象不被销毁，可以使用retain。在使用对象后，需要使用release进行释放
-给对象发送release消息并不会销毁这个对象，只当这个对象的引用计数减至0时，对象才会被销毁。然后系统会发送dealloc消息给这个对象用于释放它的内存
-对使用了retain或者copy、mutableCopy、alloc或new方法的任何对象，以及具有retain和copy特性的属性进行释放，需要覆盖deallo
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/22/手工内存管理规则的总结/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/15/CocoaPods的安装及使用/">CocoaPods的安装及使用</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-14T17:23:36.000Z" itemprop="datePublished">
-          2016-11-15
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        CocoaPods安装及使用​    本文转自eagley的博客,需看原文请点击查看！
-　　CocoaPods是ios开发平台一个非常流行的第三方库管理工具。在开发过程中，根据项目复杂程度，通常我们会需要外链很多的第三方库。而添加这些第三方库的过程有时候会变成一场灾难。因此使用CocoaPods来代替我们管理这些库，将可以大幅缩短我们的开发时间。
-　　在使用CocoaPods的时候我们并不需要关注它的原理，简单来讲它相当于将github
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/15/CocoaPods的安装及使用/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/">HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T15:38:21.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈
-先讲明步骤哦，一步一步来，别慌，遇到什么问题各种Google解决就行啊，我是基于mac写的，写说下自己也入坑了，而且看了好几个大神的博客才弄好，而且中途也弄错了，即使现在也没怎么搞好，不过，一步一步来哈。加油，自己！！！
-
-安装Node
-在Node.js官网下载对应平台的版本，然后一直点击继续安装安装哦！
-
-
-安装Git，一般安装Xcode自带Git，但是如果没有事windows
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          <a class="pull-right" href="/page/2/">Older Posts →</a>
-        </nav>
-    </div>
-</section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p></p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SDWebImage-转"><a href="#SDWebImage-转" class="headerlink" title="SDWebImage(转)"></a>SDWebImage(转)</h2><ul>
+<li><p>功能</p>
+<ul>
+<li>扩展UIImageView，UIButton，MKAnnotationView，增加网络图片与缓存管理</li>
+<li>一个异步的图片管理器</li>
+<li>一个 异步+磁盘 图片缓存，拥有自动的缓存过期处理机制</li>
+<li>支持后台图片解压缩处理</li>
+<li>确保同一个URL的图片不被下载多次</li>
+<li>确保虚假的URL不会被反复下载</li>
+<li>确保下载与缓存时，主线程不被阻塞</li>
+<li>使用GCD与ARC</li>
+</ul>
+</li>
+<li><p>组织架构</p>
+<ul>
+<li>SDWebImageDownloader负责维持图片的下载队列</li>
+<li>SDWebImageDownloaderOperation负责真正的图片下载请求</li>
+<li>SDImageCache负责图片的缓存</li>
+<li>SDWebImageManager是总的管理类，维护了一个SDWebImageDownloader实例和一个SDImageCache实例，是下载与缓存的桥梁</li>
+<li>SDWebImageDecoder负责图片的解压缩</li>
+<li>SDWebImagePrefetcher负责图片的领取</li>
+<li>UIImageView+WebCache和其他扩展都是与用户直接打交道</li>
+</ul>
+</li>
+<li><p>UIImageVIew + WebCache</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (void)setImageWithURL:(NSURL *)url;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options;</div><div class="line">- (void)setImageWithURL:(NSURL *)url completed:(SDWebImageCompletedBlock)completedBlock;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletedBlock)completedBlock;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDWebImageCompletedBlock)completedBlock;</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><figcaption><span>(void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock；```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- SDWebImageManager</div><div class="line"></div><div class="line">  -</div></pre></td></tr></table></figure>
+<p>//操作完成的回调，被上层的扩展调用。<br>typedef void(^SDWebImageCompletionBlock)(UIImage <em>image, NSError </em>error, SDImageCacheType cacheType, NSURL <em>imageURL);<br>//被SDWebImageManager调用。如果使用了SDWebImageProgressiveDownload标记，这个block可能会被重复调用，直到图片完全下载结束，finished=true,再最后调用一次这个block。<br>typedef void(^SDWebImageCompletionWithFinishedBlock)(UIImage </em>image, NSError <em>error, SDImageCacheType cacheType, BOOL finished, NSURL </em>imageURL);<br>//SDWebImageManager每次把URL转换为cache key的时候调用，可以删除一些image URL中的动态部分。<br>typedef NSString <em>(^SDWebImageCacheKeyFilterBlock)(NSURL </em>url);<br>```</p>
+</li>
+</ul>
+</li>
+</ul>
 
       
-<!-- ============================ Footer =========================== -->
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/16/SDWebImage-转/" data-id="ciz8ghz8b00099yji8nwm3kqx" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
 
-<footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Juju. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/Jujuxw" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="http://www.weibo.com/1785406062" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-</footer>
 
-<!-- ============================ END Footer =========================== -->
-      <!-- Load our scripts -->
+  
+    <article id="post-赴美带薪实习感悟" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/03/赴美带薪实习感悟/" class="article-date">
+  <time datetime="2017-01-03T02:35:53.000Z" itemprop="datePublished">2017-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-<!-- Resizable 'on-demand' full-height hero -->
-<script type="text/javascript">
-    
-    var resizeHero = function () {
-        var hero = $(".cover,.heightblock"),
-            window1 = $(window);
-        hero.css({
-            "height": window1.height()
-        });
-    };
-    
-    resizeHero();
-    
-    $(window).resize(function () {
-        resizeHero();
-    });
-</script>
-<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
-<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
-<script src="/js/scripts.js"></script><!-- Theme scripts -->
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/03/赴美带薪实习感悟/">赴美带薪实习感悟</a>
+    </h1>
+  
 
-<!-- Initiate flexslider plugin -->
-<script type="text/javascript">
-    $(document).ready(function($) {
-      $('.flexslider').flexslider({
-        animation: "fade",
-        prevText: "",
-        nextText: "",
-        directionNav: true
-      });
-    });
-</script>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><strong>赴美带薪实践</strong></strong></p>
+<p>你会向陌生人say hello，say morning么？你会在上下bus的时候向老司机们say thank you或者have a good day么？你会在行走的时候随时向擦身而过的人say excuse me 或者I‘m sorry么？你会在吃饭的时候向你的waiter说无数个Thank you very much并且付账的时候给她们很多小费么？</p>
+<p>在中国是不是都不会的，因为大家不讲英语对不对！嘿嘿嘿，这只是一个玩笑，不过除了玩笑之外，我真的能感受到领过文化的差异。</p>
+<p>友好。这个词如果放在国内，大家肯定觉得这个词用来形容少部分人还可以，如果大部分人都这么友好的话，那打架斗殴的事件肯定减少好几个百分点。<strong>在美国，你真的能感受到每个人的友好。每一个人都会微笑着和你打招呼，看着你满脸疑惑会主动帮助你解答问题。</strong>每天清晨满嘴挂着good morning，说着hello，心里被温暖得不要不要的。在酒店工作的时候，其实与客人交流的时间并不多，但是在饭店工作的时候，我能亲切感受到美国人亲切。在bar harbor，几乎每一家店门口都放着一个小碗，最先还不知道是干什么的，不过慢慢发现，这些碗都乘着水，而这些水都是为狗狗们准备的，当然我觉得美国人爱狗也是爱的极致。小小的细节让我很五体投地。</p>
+<p>信任。如果人与人之间的信任感更深一点的话，国内的丢东西事件，抢劫，犯罪事件是不是会少很多，我不是站在道德或者法律的高度来评断，而是从微小的细节感受到了差异。我记得在大一下还是大二上的时候，34节下课后去吃午饭到食堂的时候发现手机没拿走，借同学手机打电话第一个没人接，再打第二次就发现关机了，然后跑回4教，手机就没啦。不用怀疑，在我买了新手机的后不到一个月，我找回了我的手机（嘿嘿嘿，不用想我是怎么找回的）被一个大四的学长给我拿走了。<strong>我无法对那个人作出任何评价，但是丢手机那天仅仅半个小时，他拾得别人东西没有物归原主，而是占为己有。</strong>虽然自己的过错，也因为运气不好没被好心人拾得，不过这也是我一个反例让我感受到我所在的bar harbor民风多好。我经常把我的手机放在饭店每一个地方（之前坐在某地方玩，开始来客人就放在那里），即使可以很轻松被人拿走，但没有一个人碰。我觉得这就是人与人之间的信任。每晚下班坐着bus环绕小镇的时候，我能看见每个closed的礼品店依然开着灯，仅仅是把门关上就介绍了这一天，墙是玻璃的，更甚有很多店或者私有的房子，从来不锁门或者不关门，这让我感到很惊讶，惊讶于他们这么放心。每当我想到这个，我的脑海里总会蹦出还珠格格里小燕子说的大同社会。是的，我觉得我所在的地方真的是民心善良。多一分信任，少一分隔阂。</p>
+<p>尊重。<strong>来美国之前，就听说过在美国你只要肯认真干一件事，凭着你自己的能力，就没有高低贵贱之分。来这里工作之后才能深刻体会到。</strong>最初做housekeeping，我自己都在给自己归类这是社会基层的工作，而我们打扫每个房间，客人们也会觉得理所当然，不过慢慢发现，你在每次遇到房客的时候，他们亲切并带着感激的眼神和笑容向你说非常感谢的时候，或者在每个房间发现小费，再或者小费的信封上发现他们留下感激你的话语的时候，就在这些时间点上，你会觉得自己很牛逼，因为你赢的了他们每一个人的尊重。<strong>在美国，不仅尊重你的人身权利，还特别注重保护个人的隐私。</strong>更或者，来这里2个月了，我在饭店遇到过3对女同，3对男同，还在回家的bus上遇到过一对男同，说着这个我的精气神都起来了。美国很尊重每个人的恋爱观，至少我没有看到任何人在谈论这些群体，更没有带着有色眼光去评判。而我更是要给他们100个赞，他们获得自由和潇洒，真的，国内如果爱着同性，自然只能悄悄的或者胆子大一点的在朋友圈中出个柜，胆子忒大的在家人里出个柜，当然获得的肯定是阻扰与一些有色眼光。而在这里，你肯定能爱得自由，爱得轰轰烈烈。因为尊重别人，尊重你的恋爱观。而我，更是尊重他们，讲出来，是因为这些群体应该被我们每一个人理解和尊重，因为爱是没有国界的，更是没有性别之分的，你爱就爱，爱是伟大的。</p>
+<p>说到很多我的感受，再谈谈我工作体验吧。来到美国第一天我就倒过来了时差，或者我根本不需要倒时差，因为自己的作息规律，很快就适应的美国的生活。酒店上班的工作内容很简单，就是铺床，clean bathroom，吸尘。我感觉来这里还没有遇到什么困难。除了被洗脑的爱上了帝国主义，就是被洗脑的爱上帝国主义。来这里的第3天就开始了工作，咱们一周七天天天工作，无休息，别人眼中我们应该就是工资高，还拿小费。其实每天就几间房，工资并不高，小费还得看运气拿了今天盼着明天。</p>
+<p>雇主是一对夫妻，非常的友好，每天都夸奖我们工作做得很好（这让我觉得我真还做得不错，不过你认真就输了）这只是我们雇主给我们的套路，夸奖你鼓励你，给你动力。不过我们还有一个大boss（大boss是另一个酒店的雇主），她就是拥有能在你觉得很完美的房间挑出你数不清的不足的能力，我曾在她们酒店干过3天，给我留下的就是很黑暗的阴影。不过在大boss的监督下做的房间，绝对是能称得上牛逼的干净，这也是我觉得在我屈服在他淫威之下后又非常佩服她的一面。她给我说过：你愿意在不干净的酒店住么？如果你不愿意，那你就设身处地的想下，客人们也不会愿意的，所以你要清理的非常干净，客人们才会愿意在这里入住。这个理由，我给她100分，因为这句话能放在任何环境下使用，我也get到了其中的内涵，所以我很佩服这个大boss。</p>
+<p>7月初，我找到了我的第二份工作，就是之前说过的那个饭店坐waitress。在哪里，你能看到形形色色，不同国家的人。我觉得某句话说得很对：爱笑的女孩运气不会太差，我就是因为随时挂着笑脸，被很多中国同胞们称赞过。</p>
+<p>最先来这里工作还是有点担心害怕的，因为英文菜单你的记下来，辣与不辣的菜你得分开，最先只敢给中国老乡们点菜，说着流利的中文我自己也感觉到很牛逼啊（嘿嘿嘿）~每次去美国人的桌上，都害怕听不懂，都会给他们说上一个I’m very sorry，my Englisha little poor，而他们总是会说，no ,You are so good, don’t worry.此时你就感觉到暖心十足，熊着胆子给她们点菜了，最初的困难除了点菜还有端菜，因为你根本不知道你点的菜是撒。我就端错过好几次菜，有一次端错给了一个老奶奶，发现端错的时候，去问她要不要换（因为看着她没吃，就把里面的shrimp给吃了），本以为她会生气，没想到她告诉我不用了，她吃不了多少，她说她已经90几岁了，当时震惊的我不要不要的，我说她看着好年轻（这是真的，看起来除了动作缓慢，看外面真的很年轻）。</p>
+<p>慢慢的，熟悉了菜单，每天讲着英语，想到了一句只要胆子大什么都不怕。在这里你能看到，每次点菜都很麻烦的印度人（因为不吃猪肉，有些还不吃egg，还有更麻烦的），也有很多抢着结账的中国老乡（这似乎就是咱们的传统啊，咱们国人都爱抢着买账），还有很多只会讲英语的中国人（感觉他们应该是从小生活在美国），还有很多美国人说着她们有什么allergy（比如不能吃面粉，不能吃酱油），还有不给小费和要求很多的菲律宾人（不是全部，但我服务的每一桌菲律宾人都这样），还有日本人，韩国人，新加坡人，似乎我感觉到我能见到整个世界的人（嘿嘿嘿）第二份工作给了我很多挑战，不过都依依克服了。</p>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/03/赴美带薪实习感悟/" data-id="ciz8ghz90000k9yjiwikhxg35" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Juju简历-求实习呀！" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/03/Juju简历-求实习呀！/" class="article-date">
+  <time datetime="2017-01-03T02:28:52.000Z" itemprop="datePublished">2017-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/03/Juju简历-求实习呀！/">Juju简历--求实习呀！</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="file://localhost/Users/juju/Library/Group%20Containers/UBF8T346G9.Office/msoclip1/01/clip_image004.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/03/Juju简历-求实习呀！/" data-id="ciz8ghz8h000b9yjid98cziun" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-场景之间的跳转-更新" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/03/场景之间的跳转-更新/" class="article-date">
+  <time datetime="2017-01-03T02:27:44.000Z" itemprop="datePublished">2017-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/03/场景之间的跳转-更新/">场景之间的跳转(更新)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>直接跳转——控件拖拽（基于View创建）<ul>
+<li>push</li>
+<li>modal：如果A—&gt;B此模式，无法自动返回A，需要额外写代码</li>
+</ul>
+</li>
+<li>条件跳转法（performSegueWithIdentifier）——只有在满足特定条件下，才跳转到下一个（基于ViewControl创建）</li>
+<li>手动代码跳转法——Segue不存在情况下，也可以跳转到指定的ViewControl<ul>
+<li>设置identifier</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>逆向跳转——即A—&gt;B后，再B—&gt;A</p>
+<ol>
+<li><p>push Segue</p>
+<ul>
+<li>​</li>
+</ul>
+</li>
+<li><p>Modal Segue</p>
+</li>
+<li><p>Custom Segue</p>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/03/场景之间的跳转-更新/" data-id="ciz8ghz8n000e9yjiz0mvdnkf" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-RunLoop概念" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/03/RunLoop概念/" class="article-date">
+  <time datetime="2017-01-03T02:26:05.000Z" itemprop="datePublished">2017-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/03/RunLoop概念/">RunLoop概念</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>概述<ul>
+<li>运行循环</li>
+<li>由do-while循环实现</li>
+</ul>
+</li>
+<li>作用<ul>
+<li>保证程序的持续运行</li>
+<li>处理APP的各种事件（滑动，定时器，selector）</li>
+<li>节省CPU资源，提高程序性能</li>
+<li>Foundation<ul>
+<li>NSRunLoop（OC语言）</li>
+</ul>
+</li>
+<li>Core Foundation<ul>
+<li>CFRunLoopRef（C语言）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>相关类：没有以下类，不会循环</p>
+<ul>
+<li><p>CFRunLoopModeRef</p>
+<ul>
+<li>代表了RunLoop的运行模式</li>
+<li>一个RunLoop可以包含若干个Mode，每个Mode包含若干个Source/Timer/Observe</li>
+<li>每次RunLoop启动时，只能指定其中的一个Mode，这个Mode被称作currentMode</li>
+<li><strong>KCFRunLoopDefaultMode</strong>：APP的默认Mode，通常主线程是在该Mode下运行的</li>
+<li><strong>UITrackingRunLoopMode</strong>：界面跟踪Mode，用于ScrollView追踪触摸滑动，保证界面滑动时，不受其他Mode影响</li>
+<li>UIInitialzationRunLoopMode：在刚启动时APP进入的第一个Mode，启动完成后就不再使用</li>
+<li>GSEventReceiveRunLoopMode：接受系统事件的内部Mode，通常情况下不用</li>
+<li><strong>KCFRunLoopCommonModes</strong>：这是一个占位用的Mode，不是真正的Mode</li>
+</ul>
+</li>
+<li><p>CFRunLoopSourceRef</p>
+<ul>
+<li>事件源，也可称之为输入源</li>
+<li>按官方文档分类，可分为3类：<ul>
+<li>Port-Based Sources 从其他线程或内核发出的</li>
+<li>Custome input Sources 自定义的</li>
+<li>CoCoa Perform Selector Sources</li>
+<li>按函数调用栈分类，可分为2类：<ul>
+<li>Sources0：非基于Port类的(点击事件)</li>
+<li>Sources1：基于Port，通过其他线程或者内核通信，接收，分发系统事件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CFRunLoopTimerRef</p>
+<ul>
+<li>基于时间的触发器</li>
+</ul>
+</li>
+<li><p>CFRunLoopObserverRef</p>
+<ul>
+<li><p>观察者，能监听RunLoop的状态的改变</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity)&#123;</div><div class="line">  KCFRunLoopEntry = (1UL &lt;&lt; 0),//即将进入RunLoop</div><div class="line">  KCFRunLoopBeforeTimers = (1UL &lt;&lt; 1),//即将处理RunLoop</div><div class="line">  KCFRunLoopBeforeSources = (1UL &lt;&lt; 2),//即将处理Sources</div><div class="line">  KCFRunLoopBeforeWaiting = (1UL &lt;&lt; 5),//即将进入休眠</div><div class="line">  KCFRunLoopAfterWaiting = (1UL &lt;&lt; 6),//即将从休眠中唤醒</div><div class="line">  KCFRunLoopExit = (1UL &lt;&lt; 7),//即将退出RunLoop</div><div class="line">  KCFRunLoopAllActivities = OxOFFFFFFFU//活跃中</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>RunLoop与线程<ul>
+<li>每条线程都有唯一的一个与之对应的RunLoop对象</li>
+<li>主线程的RunLoop随着程序已自动创建好，但是子线程的RunLoop需要自动创建</li>
+<li>获得主线程的RunLoop的方法是：<code>[NSRunLoop mainRunLoop]</code></li>
+<li>创建子线程RunLoop的方法是：<code>[NSRunLoop currentRunLoop]</code>(其中原理可以在CFRunLoop中查看)</li>
+<li>苹果不允许创建RunLoop，只提供上述两种获得RunLoop的方法 <img src="多线程15_RunLoop_Observer_source.png" alt="多线程15_RunLoop_Observer_source"></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/03/RunLoop概念/" data-id="ciz8ghz8l000d9yjij80v515x" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-NSOperation相关概念" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/03/NSOperation相关概念/" class="article-date">
+  <time datetime="2017-01-03T02:24:20.000Z" itemprop="datePublished">2017-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/03/NSOperation相关概念/">NSOperation相关概念</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>配合使用NSOperation和NSOperationQueue也可以实现多线程<ul>
+<li>先将需要执行的操作封装到一个NSOperation对象中</li>
+<li>将NSOperation对象添加到一个NSOperationQueue对象中</li>
+<li>系统会自动将NSOperationQueue中的NSOperation取出来</li>
+<li>将取出的NSOperation封装的操作放到一条线程中去执行</li>
+</ul>
+</li>
+<li><p>抽象类，并不具有封装操作的能力，必须使用它的子类：</p>
+<ul>
+<li><p>NSInvocationOperation</p>
+<ul>
+<li><p>创建NSInvocationOperation对象</p>
+<ul>
+<li><figure class="highlight plain"><figcaption><span>*ip =[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(operation) object:nil] ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">  - 调用start方法</div><div class="line">    - `[ip start]`</div><div class="line">    - 一旦执行操作，就回调用target的selector方法</div><div class="line">  - 注意</div><div class="line">    - 默认情况下，调用start方法后并不会开启一条新的线程去执行操作，而是在当前线程同步执行操作</div><div class="line">    - 只有将NSOperation放到NSOperationQueue中，才会异步执行操作</div><div class="line"></div><div class="line">- NSBlockOperation</div><div class="line"></div><div class="line">  - 创建NSBlockOperation对象</div><div class="line"></div><div class="line">    -</div></pre></td></tr></table></figure>
+<p>NSBlockOperation *bp = [NSBlockOperation blockOperationWithBlock:^{</p>
+<pre><code>//在此封装操作
+}];
+</code></pre><p>```</p>
+<p>​    </p>
+</li>
+</ul>
+</li>
+<li><p>通过addExutionBlock:方法添加</p>
+<ul>
+<li><code>[bp addExecutionBlock:^{//额外的操作}]</code></li>
+</ul>
+</li>
+<li><p>注意</p>
+<ul>
+<li>只要NSBlockOperation封装的操作大于1，就回开启线程，异步执行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>NSOperationQueue</p>
+<ul>
+<li>只有将NSOperation放到NSOperationQueue中，才会异步执行操作</li>
+<li>添加到NSOperationQueue<ul>
+<li>调用addOperation：方法</li>
+<li>调用addOperationWithBlock：方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>自定义子类继承自NSOperation，实现内部相应的方法</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>任务依赖—-如果A依赖B，等B执行完成之后在执行A<ul>
+<li>任务之间不能相互依赖</li>
+<li>addDependency:前者依赖于后者，后者先执行，再执行前者</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/03/NSOperation相关概念/" data-id="ciz8ghz8j000c9yji4auyf8uq" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-多线程及其相关的概念" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/27/多线程及其相关的概念/" class="article-date">
+  <time datetime="2016-11-27T08:30:47.000Z" itemprop="datePublished">2016-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/27/多线程及其相关的概念/">多线程及其相关的概念</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="多线程及其相关的概念"><a href="#多线程及其相关的概念" class="headerlink" title="多线程及其相关的概念"></a>多线程及其相关的概念</h1><ul>
+<li><p>进程</p>
+<ul>
+<li>进程是指在系统正在运行的一个应用程序</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>比如同时打开微信、QQ，系统就会分别启动两个进程</li>
+<li>每个进程之间是独立的，且运行在其专用并受保护的内存空间内</li>
+</ul>
+<ul>
+<li><p>线程</p>
+<ul>
+<li>线程是进程的基本执行单元，一个进程想要执行任务，必须的有线程（一个进程至少有一个线程）</li>
+<li>比如qq进行文字聊天，使用微信进行视频聊天，都需要在线程中执行</li>
+</ul>
+</li>
+<li><p>线程的串行</p>
+<ul>
+<li>如果一个线程中执行多个任务，那么只能一个一个的按顺序执行，也就是说，在同一时间内，一个线程中只能执行一个任务</li>
+<li>比如在一个线程中3个下载任务（任务A，任务B，任务C）</li>
+<li>因此也认为线程是进程中的一条执行路径</li>
+</ul>
+</li>
+<li><p>多线程</p>
+<ul>
+<li>一个进程中可以开启多条线程，每个线程可以并行（同时）执行不同的任务<ul>
+<li>可以将进程比作工厂车间，线程比作车间工人，由不同任务的车间工人在车间运作，最后生产出产品。因此呢，可以说多线程技术可以提高程序的执行效率</li>
+</ul>
+</li>
+<li>比如同时开启3条线程分别操作3个下载任务（任务A，任务B，任务C）</li>
+</ul>
+</li>
+<li><p>多线程的原理</p>
+<ul>
+<li>同一时间，CPU只能处理一条线程，只有一条线程在工作</li>
+<li>多线程并发执行时，其实是CPU快速的在线程之间调度</li>
+<li>如果CPU调度线程的时间足够快，就造成了多条线程并发执行的假象</li>
+</ul>
+</li>
+<li><p>多线程的优缺点</p>
+<ul>
+<li>优点<ul>
+<li>能够适当的提高程序的执行效率</li>
+<li>能够适当提高资源的利用率（CPU、利用率）</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>开启线程需要占用一定的内存空间（默认情况下，主线程占用1M，子线程占用512KB），如果开启大量的线程，会占用大量的内存空间，降低程序的性能</li>
+<li>线程越多，CPU在调度线程上得开销就越大</li>
+<li>程序设计更加复杂：比如线程之间通信，多线程的数据共享</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>主线程</p>
+<ul>
+<li>一个iOS程序运行后，默认会开启一条线程，该线程称为“主线程”或“UI线程”</li>
+<li>显示/刷新UI界面</li>
+<li>处理UI事件（比如点击事件，滚动事件，拖拽事件）</li>
+<li>不要将比较耗时的操作放在主线程中（因为耗时操作会卡主主线程，严重影响UI的流畅度，会给用户一种“卡”的感觉，体验效果不好）</li>
+</ul>
+</li>
+<li><p>多线程的使用方案</p>
+<ul>
+<li>|    技术方案     | 简介                                       |  语言  | 线程的生命周期 | 使用频率 |<br>| :———: | —————————————- | :–: | :—–: | :–: |<br>|  NSThread   | 1.面向对象的使用                                                            2.简单易用可以操作线程对象 |  OC  |  程序员管理  | 偶尔使用 |<br>|     GCD     | 1.旨在代替NSThread等线程技术                             2.充分利用设备的多核 |  C   |  自动管理   | 经常使用 |<br>| NSOperation | 1.基于GCD                                                        2.使用更加面向对象                                          3.比GCD多了一些更简单的使用的功能 |  OC  |  自动管理   | 经常使用 |</li>
+</ul>
+</li>
+<li><p>NSThread创建多线程方法    </p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(run:) object:@&quot;abc&quot;];</div><div class="line">[thread start];</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>[NSThread detachNewThreadSelector:@selector(run:) toTarget:self withObject:@&quot;miss&quot;];</code></p>
+</li>
+<li><p><code>[self performSelectorInBackground:@selector(run:) withObject:@&quot;back&quot;];</code></p>
+</li>
+</ul>
+</li>
+<li><p>互斥锁</p>
+<ul>
+<li>优点<ul>
+<li>有效的防止因多线程抢夺资源造成的数据安全问题</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>因为线程等待，需要消耗大量的CPU资源</li>
+</ul>
+</li>
+<li>注意<ul>
+<li>互斥锁又叫线程同步</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>线程同步</p>
+<ul>
+<li><p>线程同步指的是多条线程在同一条线上执行（按顺序执行任务）</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@synchronized (self)&#123;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>线程通信</p>
+<ul>
+<li>在一个进程中，线程往往不是孤立存在的，多个线程之间是存在有通信关系的</li>
+</ul>
+</li>
+<li><p>线程通信的体现</p>
+<ul>
+<li>一个线程传递数据给另外一个线程</li>
+<li>一个线程执行完成任务后转到另外一个线程继续执行任务</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//在主线程使用这种耗时的方法会消耗主线程，所以需要使用到子线程来回调</div><div class="line">	NSDate *begin = [NSDate date];    </div><div class="line">    NSURL *url = [NSURL URLWithString:IMAGE_URL];    </div><div class="line">    NSDate *end = [NSDate date];    </div><div class="line">    NSData *data = [NSData dataWithContentsOfURL:url];</div><div class="line">    NSLog(@&quot;%f&quot;,[end timeIntervalSinceDate:begin]);  </div><div class="line">    self.imageView.image = [UIImage imageWithData:data];</div><div class="line"></div><div class="line">//线程通信----由子线程回归到主线程</div><div class="line"></div><div class="line">	NSURL *url = [NSURL URLWithString:IMAGE_URL];</div><div class="line">    </div><div class="line">    NSData *data = [NSData dataWithContentsOfURL:url];</div><div class="line">    </div><div class="line">    UIImage *image = [UIImage imageWithData:data];</div><div class="line">	</div><div class="line">	//方法一</div><div class="line">	[self performSelectorOnMainThread:@selector(loadImage:) withObject:image waitUntilDone:YES];</div><div class="line">	//方法二</div><div class="line">	[self performSelector:@selector(loadImage:) onThread:[NSThread mainThread] withObject:image waitUntilDone:NO];</div><div class="line">	//方法三</div><div class="line">	[self.imageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];</div><div class="line">	</div><div class="line">	</div><div class="line">//然后通过调用的方法传值</div><div class="line"></div><div class="line">	- (void) loadImage:(id)obj &#123;</div><div class="line">      self.imageView.image = obj;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>GCD<ul>
+<li>纯C语言，提供了非常强大的函数</li>
+<li>优势<ul>
+<li>GCD是苹果公司为多核的并行运算提出的解决方案</li>
+<li>GCD会自动利用更多的CPU内核（比如双核，四核）</li>
+<li>GCD会自动管理线程的生命周期（创建线程，调度任务，销毁线程）</li>
+<li>程序员只需要告诉GCD想要执行什么任务，不需要编写任何线程管理代码</li>
+</ul>
+</li>
+<li>任务：执行什么操作<ul>
+<li>同步任务<ul>
+<li>Dispatch_sync(dispatch_queue_t queue,dispatch_block_t block);</li>
+<li>queue：队列</li>
+<li>block：任务</li>
+</ul>
+</li>
+<li>异步任务<ul>
+<li>Dispatch_async(dispatch_queue_t queue,dispatch_block_t block);</li>
+</ul>
+</li>
+<li>同步异步：能不能开启新的线程<ul>
+<li>同步：<ul>
+<li>只能在<strong><em>当前线程</em></strong>中执行任务，不具备开启新线程的能力</li>
+</ul>
+</li>
+<li>异步：<ul>
+<li>可以再<strong><em>新的线程</em></strong>中执行任务，具备开启新线程的能力</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>队列：用来存放任务<ul>
+<li>并发与串行：任务的执行方式<ul>
+<li>并发队列（ConCurrent Dispatch Queue）<ul>
+<li>可以让多个任务并发（同时）执行（自动开启多个线程同时执行任务）</li>
+<li>并发的功能只有在异步函数（dispatch_async）下才有效</li>
+<li>dispatch_queue_create(const char *label, dispatch_queue_attr_t attr)创建并行队列<ul>
+<li>label:表示队列的名字（标识）</li>
+<li>attr：表示队列的属性，根据这个设置判断是并行队列还是串行队列（DISPATCH_QUEUE_CONCURRENT表示并行队列）</li>
+</ul>
+</li>
+<li>Dispatch_get_global_queue(dispatch_queue_priority_t priority, unsigned long flags);获得全局的并发队列<ul>
+<li>Priority:队列的优先级（分为高，默认，低，后台）</li>
+<li>flags：此函数暂时无用，用0即可</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>串行队列（Serial Dispatch Queue）<ul>
+<li>让任务一个接着一个的执行（也就是说须等一个任务执行完毕后才可执行下一个任务）</li>
+<li>dispatch_queue_create(const char *label, dispatch_queue_attr_t attr)创建串行队列<ul>
+<li>label:表示队列的名字（标识）</li>
+<li>attr：表示队列的属性，根据这个设置判断是并行队列还是串行队列（DISPATCH_QUEUE_SERIAL或者NULL表示串行队列）</li>
+</ul>
+</li>
+<li>使用主队列（与主线程相关联的队列）<ul>
+<li>使用dispatch_get_main_queue()获得主队列</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>步骤：<ul>
+<li>定制任务—-确定想做的事情</li>
+<li>将任务添加到队列中—-GCD会自动将队列的任务取出，放到对应的线程中执行</li>
+</ul>
+</li>
+<li>注意：<ul>
+<li>任务的取出遵循队列的FIFO原则：先进先出，后进后出</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/27/多线程及其相关的概念/" data-id="ciz8ghz8w000h9yjidpsbbk0s" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-手工内存管理规则的总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/22/手工内存管理规则的总结/" class="article-date">
+  <time datetime="2016-11-22T14:40:59.000Z" itemprop="datePublished">2016-11-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/22/手工内存管理规则的总结/">手工内存管理规则的总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="手工内存管理规则的总结"><a href="#手工内存管理规则的总结" class="headerlink" title="手工内存管理规则的总结"></a>手工内存管理规则的总结</h1><ul>
+<li>如果需要保持一个对象不被销毁，可以使用retain。在使用对象后，需要使用release进行释放</li>
+<li>给对象发送release消息并不会销毁这个对象，只当这个对象的引用计数减至0时，对象才会被销毁。然后系统会发送dealloc消息给这个对象用于释放它的内存</li>
+<li>对使用了retain或者copy、mutableCopy、alloc或new方法的任何对象，以及具有retain和copy特性的属性进行释放，需要覆盖dealloc方法，使得在对象被释放的时候能够释放这些实例变量</li>
+<li>在自动释放池被清空时也会为自动释放的对象做些事情。系统每次都会在自动释放池被释放时发送release消息给池中的每个对象。如果池中的对象引用计数降为0，系统会发送dealloc消息销毁这个对象</li>
+<li>如果在方法中不再需要用到这个对象，但需要将其返回，可以给这个对象发送autorelease消息用以标记这个对象延迟释放。autorelease消息并不会影响到对象的引用计数</li>
+<li>当应用终止时，内存中的所有对象都会被释放，不论它们是否在自动释放池中</li>
+<li>当开发Cocoa或者iOS应用程序时，随着应用程序的运行，自动释放池会被创建和清空（每次的事件都会发生）。在这种情况下，如果要使自动释放池被清空后自动释放的对象还能够存在，对象需要使用retain方法，只要这些对象的引用计数大于发送autorelease消息的数量，就能够在清理后生存下来</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/22/手工内存管理规则的总结/" data-id="ciz8ghz8s000g9yjiv08u33ms" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CocoaPods的安装及使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/15/CocoaPods的安装及使用/" class="article-date">
+  <time datetime="2016-11-14T17:23:36.000Z" itemprop="datePublished">2016-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/15/CocoaPods的安装及使用/">CocoaPods的安装及使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CocoaPods安装及使用"><a href="#CocoaPods安装及使用" class="headerlink" title="CocoaPods安装及使用"></a><a href="http://www.cnblogs.com/eagley/p/5407721.html" target="_blank" rel="external">CocoaPods安装及使用</a></h1><p>​    <strong>本文转自<a href="http://www.cnblogs.com/eagley/" target="_blank" rel="external">eagley</a>的博客,需看<a href="http://www.cnblogs.com/eagley/p/5407721.html" target="_blank" rel="external">原文</a>请点击查看！</strong></p>
+<p>　　CocoaPods是ios开发平台一个非常流行的第三方库管理工具。在开发过程中，根据项目复杂程度，通常我们会需要外链很多的第三方库。而添加这些第三方库的过程有时候会变成一场灾难。因此使用CocoaPods来代替我们管理这些库，将可以大幅缩短我们的开发时间。</p>
+<p>　　在使用CocoaPods的时候我们并不需要关注它的原理，简单来讲它相当于将github上的第三方库checkout到你的项目工程目录中，再直接将这些库的链接添加到你的工程中。并且之后你也可以通过简单的命令对这些库进行更新。</p>
+<p>　　以下就来了解一下CocoaPods的安装过程以及使用方法：</p>
+<p><strong>1.环境配置</strong></p>
+<p>　　笔者使用的开发环境是Mac OS X 10.11，XCode 7.3。CocoaPods的安装和使用需要有Ruby环境（Mac系统默认安装了Ruby环境，如果系统没有Ruby环境的可以去百度，有很多相关的文档）。不确定自己系统中是否有Ruby的，可以在终端中输入命令行：ruby -v查看当前ruby版本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ruby -v</div><div class="line">ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15]</div></pre></td></tr></table></figure>
+<p>　　如果确认系统中已经有Ruby环境的，就可以继续下面的安装步骤了。</p>
+<p><strong>1.安装</strong></p>
+<p>　　CocoaPods的安装是非常简单的，但是前提是你的网速够快并且能绕过GFW（这就是为什么程序员必须要有vpn）。</p>
+<p>　　确保网速够快（能绕过GFW）的，可以直接执行下面命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo gem install cocoapods</div></pre></td></tr></table></figure>
+<p>　　如果执行了这句命令以后，终端很长时间都没有反应，那么就可以确定你没有绕过GFW了。这样的话你就需要按照以下步骤进行安装了：</p>
+<p>　　首先，检查你的ruby源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$gem sources -l</div></pre></td></tr></table></figure>
+<p>　　默认情况下，终端应该返回如下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*** CURRENT SOURCES ***</div><div class="line"></div><div class="line">https://rubygems.org/</div></pre></td></tr></table></figure>
+<p>　　当然这个源在墙内是访问不到的。因此我们需要寻找一个可以在国内访问到的镜像。目前笔者找到的是<a href="http://rubygems-china.oss.aliyuncs.com这个阿里云的镜像，当然随着时间的推移，未来这个镜像也有可能无法访问了，到时候就只能重新寻找了。" target="_blank" rel="external">http://rubygems-china.oss.aliyuncs.com这个阿里云的镜像，当然随着时间的推移，未来这个镜像也有可能无法访问了，到时候就只能重新寻找了。</a></p>
+<p>　　确认镜像可用后，现在就要开始修改ruby源了。首先执行以下命令删除原来的ruby源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$gem sources --remove https://rubygems.org/</div></pre></td></tr></table></figure>
+<p>　　执行命令后可在终端看见以下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://rubygems.org/ removed from sources</div></pre></td></tr></table></figure>
+<p>　　然后下一步添加你找到的可用的镜像源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$gem sources -a http://rubygems-china.oss.aliyuncs.com</div></pre></td></tr></table></figure>
+<p>　　此时如果你再执行gem sources -l命令，就能看到当前镜像源里只有阿里云这一个了。此时你就可以重新执行这一段开头的那句命令了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$sudo gem install cocoapods</div></pre></td></tr></table></figure>
+<p>　　如果一切正常，你应该能看到一段安装进度，以及最后有一条信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3 gems installed</div></pre></td></tr></table></figure>
+<p>　　确认看见这条信息，就说明你的安装已经成功了，接下去就可以开始准备在你的项目中使用CocoaPods了。</p>
+<p><strong>2.使用</strong></p>
+<p>　　CocoaPods的使用我们以一个ios上非常通用的AFNetworking为例。首先，你需要检查你要添加的第三方库是否支持CocoaPods。在终端中执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pod search AFNetworking</div></pre></td></tr></table></figure>
+<p>　　执行以后你应该能看到类似如下的一些关于AFNetworking库的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">-&gt; AFNetworking (3.1.0)</div><div class="line">   A delightful iOS and OS X networking framework.</div><div class="line">   pod &apos;AFNetworking&apos;, &apos;~&gt; 3.1.0&apos;</div><div class="line">   - Homepage: https://github.com/AFNetworking/AFNetworking</div><div class="line">   - Source:   https://github.com/AFNetworking/AFNetworking.git</div><div class="line">   - Versions: 3.1.0, 3.0.4, 3.0.3, 3.0.2, 3.0.1, 3.0.0, 3.0.0-beta.3,</div><div class="line">   3.0.0-beta.2, 3.0.0-beta.1, 2.6.3, 2.6.2, 2.6.1, 2.6.0, 2.5.4, 2.5.3, 2.5.2,</div><div class="line">   2.5.1, 2.5.0, 2.4.1, 2.4.0, 2.3.1, 2.3.0, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0,</div><div class="line">   2.1.0, 2.0.3, 2.0.2, 2.0.1, 2.0.0, 2.0.0-RC3, 2.0.0-RC2, 2.0.0-RC1, 1.3.4,</div><div class="line">   1.3.3, 1.3.2, 1.3.1, 1.3.0, 1.2.1, 1.2.0, 1.1.0, 1.0.1, 1.0, 1.0RC3, 1.0RC2,</div><div class="line">   1.0RC1, 0.10.1, 0.10.0, 0.9.2, 0.9.1, 0.9.0, 0.7.0, 0.5.1 [master repo]</div><div class="line">   - Subspecs:</div><div class="line">     - AFNetworking/Serialization (3.1.0)</div><div class="line">     - AFNetworking/Security (3.1.0)</div><div class="line">     - AFNetworking/Reachability (3.1.0)</div><div class="line">     - AFNetworking/NSURLSession (3.1.0)</div><div class="line">     - AFNetworking/UIKit (3.1.0)</div></pre></td></tr></table></figure>
+<p>　　确认AFNetworking库支持CocoaPods后，接下去我们就可以开始做添加操作了。</p>
+<p>　　首先在XCode中新建一个project，笔者在这里命名为CocoaPodsTest。然后，在终端中cd到你的project所在的目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$cd /CocoaPodsTest</div></pre></td></tr></table></figure>
+<p>　　然后，执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$vim Podfile</div></pre></td></tr></table></figure>
+<p>　　添加一个Podfile文件。然后按i进入插入模式，进行编辑，在文件中输入以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">platform :ios, &apos;8.1&apos;</div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt; 2.0&apos;</div></pre></td></tr></table></figure>
+<p>　　输入完成后按ESC退出编辑模式，最后输入:wq保存并退出文件。此时可以发现在项目目录下多了一个Podfile的文件，请注意这个文件必须与.xcodeproj在同一目录下。</p>
+<p>　　（眼尖的朋友可能已经发现了，笔者这里使用的AFNetworking是2.0版本，而search出来的最新版本是3.1.0。这是为了下面执行update方便而进行的设置，这里可以直接填3.1.0）</p>
+<p>　　不要改变终端中的当前目录，执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pod install</div></pre></td></tr></table></figure>
+<p>　　就可以在当前项目中添加CocoaPods支持。安装完成后可以看到如下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[!] Please close any current Xcode sessions and use CocoaPodsTest.xcworkspace for this project from now on.</div><div class="line"></div><div class="line">Sending stats</div><div class="line"></div><div class="line">Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.</div></pre></td></tr></table></figure>
+<p>　　该信息表示CocoaPods已成功添加到当前项目中。同时“1 dependency from the Podfile”的意思就是Podfile文件中的AFNetworking库也添加完毕。同时在项目目录下你能发现多了Pods目录以及一个.xcworkspace文件。上面[!]后面提示的信息表示你需要在XCode中关闭现在这个CocoaPodsTest.xcodeproj，并且以后使用CocoaPodsTest.xcworkspace文件打开工程。</p>
+<p>　　这个时候你打开xcworkspace，应该可以看见Pods已经被添加到工程，并且在Pods组里面，也包含了AFNetworking库。</p>
+<p><img src="http://images2015.cnblogs.com/blog/133248/201604/133248-20160419120817210-1832791126.png" alt="img"></p>
+<p>　　这样，我们就完成了CocoaPods从安装到添加到工程的整个流程。而对于已经使用了CocoaPods的工程，可以通过CocoaPods的update功能直接更新包含的第三方库。</p>
+<p><strong>3.更新</strong></p>
+<p>　　CocoaPods可以非常简单的使用update语句直接更新所有第三方库，以下仍然使用AFNetworking为例。</p>
+<p>　　首先，我们可以看到前面笔者使用的AFNetworking库，是使用的2.0版本。然而pod search AFNetworking命令执行的时候，能看到AFNetworking目前最新的版本是3.1.0。接下去我们就来看要如何将目前的第三方库版本更新到最新的版本。</p>
+<p>　　同样先cd到项目目录下，并且开始编辑Podfile文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$cd /CocoaPodsTest</div><div class="line">$vim Podfile</div></pre></td></tr></table></figure>
+<p>　　将Podfile文件中AFNetworking这一行的2.0改成3.1.0：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">platform :ios, &apos;8.1&apos;</div><div class="line">pod &apos;AFNetworking&apos;, &apos;~&gt; 3.1.0&apos;</div></pre></td></tr></table></figure>
+<p>　　修改完成后，按ESC退出编辑模式，最后输入:wq保存并退出文件。</p>
+<p>　　然后回到终端，执行以下命令就可以开始更新了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pod update</div></pre></td></tr></table></figure>
+<p>　　可以看到在返回的信息中有一行绿色的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Installing AFNetworking 3.1.0 (was 2.6.3)</div></pre></td></tr></table></figure>
+<p>　　这就表示项目中的AFNetworking库已经更新到3.1.0版本了。</p>
+<p><strong>4.小结</strong></p>
+<p>　　CocoaPods的功能非常强大，更高级的使用需求可以访问CocoaPods的官网<a href="https://cocoapods.org/" target="_blank" rel="external">https://cocoapods.org/</a> 查找更多功能。另外在<a href="https://github.com/CocoaPods/CocoaPods/wiki" target="_blank" rel="external">https://github.com/CocoaPods/CocoaPods/wiki</a> 也可以获得更多信息。</p>
+<p>　　本文参考了</p>
+<p>　　<a href="http://cnbin.github.io/blog/2015/05/25/cocoapods-an-zhuang-he-shi-yong/" target="_blank" rel="external">http://cnbin.github.io/blog/2015/05/25/cocoapods-an-zhuang-he-shi-yong/</a></p>
+<p>　　<a href="http://code4app.com/article/cocoapods-install-usage" target="_blank" rel="external">http://code4app.com/article/cocoapods-install-usage</a></p>
+<p>　　两位分享的内容，在这里致以诚挚的谢意。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/15/CocoaPods的安装及使用/" data-id="ciz8ghz93000l9yjikofpxwmo" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/" class="article-date">
+  <time datetime="2016-11-11T15:38:21.000Z" itemprop="datePublished">2016-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/">HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈"><a href="#HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈" class="headerlink" title="HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈"></a>HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈</h1><ul>
+<li><p>先讲明步骤哦，一步一步来，别慌，遇到什么问题各种Google解决就行啊，我是基于mac写的，写说下自己也入坑了，而且看了好几个大神的博客才弄好，而且中途也弄错了，即使现在也没怎么搞好，不过，一步一步来哈。加油，自己！！！</p>
+</li>
+<li><p>安装Node</p>
+<p>在<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js官网</a>下载对应平台的版本，然后一直点击继续安装安装哦！</p>
+<p><img src="/Users/juju/Documents/iOS/BLOG/source/_posts/node.png" alt=""></p>
+</li>
+<li><p>安装Git，一般安装<a href="https://developer.apple.com/xcode/" target="_blank" rel="external">Xcode</a>自带<a href="http://rj.baidu.com/soft/detail/30195.html?ald" target="_blank" rel="external">Git</a>，但是如果没有事windows的电脑请自行下载哦</p>
+</li>
+<li><p>有一个<a href="https://github.com/" target="_blank" rel="external">GitHub</a>的账号，自我认为GitHub是必用学习网站之一，作为渣渣的我也比较喜欢的。</p>
+</li>
+<li><p>此时需要本地的hexo与github建立连接，你可以去网上搜一下就明白了，如果不配置，也只是在搭建成功写博客时提交时输入账号密码就可以了。</p>
+</li>
+<li><p>正式安装Hexo，</p>
+<ul>
+<li>打开客户端<code>$ sudo npm install -g hexo</code></li>
+</ul>
+</li>
+<li><p>初始化</p>
+<ul>
+<li>创建一个文件夹，然后在客户端cd到这个文件夹下</li>
+<li>输入命令<code>$ hexo init</code></li>
+</ul>
+</li>
+<li><p>生成静态页面哈，此时前面的工作完成啦！</p>
+<ul>
+<li>输入命令<code>$ hexo g (hexo generate 也可以哦)</code></li>
+</ul>
+</li>
+<li><p>本地启动，可以运行本地服务器，进行页面预览哒！</p>
+<ul>
+<li>输入命令<code>$ hexo s (hexo server也可以哦)</code>此时<img src="/Users/juju/Documents/iOS/BLOG/source/_posts/hexo server.png" alt="">图片如图这样，就表示启动成功，访问<a href="http//localhost:4000"></a>看能不能显示页面，不行的话，再检查前面配置是否成功，不行的话再重新修改下。</li>
+</ul>
+</li>
+<li><p>配置GitHub，建立Repository，仓库名必须是【userName.github.io】(userName是你GitHub的名称)，这是一个固定的写法，这样写就好啦。</p>
+</li>
+<li><p>进入通过<code>hexo init</code>建立的blog文件夹，找到<code>-config.yml</code>打开修改：</p>
+<ul>
+<li><p>找到最下面deploy哪里，修改如下：<code>其中，冒号：后面一定要有空格</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">//type后写git，有的也可以写github.com.git，不过就写git就好啦，因为大神这么写的，我还渣。</div><div class="line">  type: git</div><div class="line">  //这里的创库链接，就是你在GitHub上创建的那个仓库链接</div><div class="line">  repository: https://github.com/leopardpan/leopardpan.github.io.git</div><div class="line">  //这里就写这个就好啦，固定的</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>执行<code>$ npm install hexo-deployer-git --save</code>部署文件</p>
+</li>
+<li><p>执行<code>$ hexo deploy</code>就可以通过userName.github.io进行访问你的博客啦！（userName就是之前你的账户名称）</p>
+</li>
+<li><p>如果要写博客可以进行以下操作即可</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;postName&quot; #新建文章</div><div class="line">hexo generate #生成静态页面至public目录</div><div class="line">hexo deploy #将.deploy目录部署到GitHub</div><div class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</div><div class="line"></div><div class="line">或者</div><div class="line">hexo new &quot;postName&quot; #新建文章</div><div class="line">hexo d -g</div><div class="line">hexo s</div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/" data-id="ciz8ghz8200089yji973xnyqh" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/16/SDWebImage-转/">SDWebImage(转)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/03/赴美带薪实习感悟/">赴美带薪实习感悟</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/03/Juju简历-求实习呀！/">Juju简历--求实习呀！</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/03/场景之间的跳转-更新/">场景之间的跳转(更新)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/03/RunLoop概念/">RunLoop概念</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Juju<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
 </body>
 </html>
