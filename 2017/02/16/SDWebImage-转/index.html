@@ -189,7 +189,41 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		
+      		<h2 id="SDWebImage-转"><a href="#SDWebImage-转" class="headerlink" title="SDWebImage(转)"></a>SDWebImage(转)</h2><ul>
+<li><p>功能</p>
+<ul>
+<li>扩展UIImageView，UIButton，MKAnnotationView，增加网络图片与缓存管理</li>
+<li>一个异步的图片管理器</li>
+<li>一个 异步+磁盘 图片缓存，拥有自动的缓存过期处理机制</li>
+<li>支持后台图片解压缩处理</li>
+<li>确保同一个URL的图片不被下载多次</li>
+<li>确保虚假的URL不会被反复下载</li>
+<li>确保下载与缓存时，主线程不被阻塞</li>
+<li>使用GCD与ARC</li>
+</ul>
+</li>
+<li><p>组织架构</p>
+<ul>
+<li>SDWebImageDownloader负责维持图片的下载队列</li>
+<li>SDWebImageDownloaderOperation负责真正的图片下载请求</li>
+<li>SDImageCache负责图片的缓存</li>
+<li>SDWebImageManager是总的管理类，维护了一个SDWebImageDownloader实例和一个SDImageCache实例，是下载与缓存的桥梁</li>
+<li>SDWebImageDecoder负责图片的解压缩</li>
+<li>SDWebImagePrefetcher负责图片的领取</li>
+<li>UIImageView+WebCache和其他扩展都是与用户直接打交道</li>
+</ul>
+</li>
+<li><p>UIImageVIew + WebCache</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (void)setImageWithURL:(NSURL *)url;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options;</div><div class="line">- (void)setImageWithURL:(NSURL *)url completed:(SDWebImageCompletedBlock)completedBlock;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletedBlock)completedBlock;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDWebImageCompletedBlock)completedBlock;</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><figcaption><span>(void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock；```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- SDWebImageManager</div><div class="line"></div><div class="line">  -</div></pre></td></tr></table></figure>
+<p>//操作完成的回调，被上层的扩展调用。<br>typedef void(^SDWebImageCompletionBlock)(UIImage <em>image, NSError </em>error, SDImageCacheType cacheType, NSURL <em>imageURL);<br>//被SDWebImageManager调用。如果使用了SDWebImageProgressiveDownload标记，这个block可能会被重复调用，直到图片完全下载结束，finished=true,再最后调用一次这个block。<br>typedef void(^SDWebImageCompletionWithFinishedBlock)(UIImage </em>image, NSError <em>error, SDImageCacheType cacheType, BOOL finished, NSURL </em>imageURL);<br>//SDWebImageManager每次把URL转换为cache key的时候调用，可以删除一些image URL中的动态部分。<br>typedef NSString <em>(^SDWebImageCacheKeyFilterBlock)(NSURL </em>url);<br>```</p>
+</li>
+</ul>
+</li>
+</ul>
+
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
