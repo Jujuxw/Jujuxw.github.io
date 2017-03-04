@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Objective-C基础累计 | Juju</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Juju">
+    <meta name="author" content="Juju">
+    <meta name="description" content="The Lucky You Can Get" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Juju" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">Objective-C</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">Swift</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Juju</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Jujuxw" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/cover.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-03-04T14:37:40.000Z" itemprop="datePublished">
+          2017-03-04
+      </time>
+    
+    
+    | 
+    <a href='/tags/Objective-C-基础/'>Objective-C 基础</a>
+    
+    
+</span>
+                <h1>Objective-C基础累计</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="基础累计"><a href="#基础累计" class="headerlink" title="基础累计"></a>基础累计</h2><ul>
+<li><p><strong>经典命名法则：</strong></p>
+<ul>
+<li>匈牙利命名法：<ul>
+<li>该命名法则就是在每个变量名前面加上若干表示数据类型的字符。</li>
+<li>基本原则就是：变量名 = 属性 + 类型 + 对象描述</li>
+<li>比如以i开头的属性表示int类型</li>
+</ul>
+</li>
+<li>驼峰命名法<ul>
+<li>混合使用大小写字母开构成变量和函数名字，首字母小写</li>
+</ul>
+</li>
+<li>帕斯卡命名法<ul>
+<li>首字母大写，其它同驼峰</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>命名规则</strong></p>
+<ul>
+<li>变量名首字母必须为字母、下划线、@、或者$开始</li>
+<li>变量名只能是字母，数字，下划线、@组合，不能有空格</li>
+<li>不能用编程语言的保留字 </li>
+</ul>
+</li>
+<li><p><strong>运算符</strong></p>
+<ul>
+<li><p>一元负号运算符具有更高的优先级，但一元正号运算符和算术运算符的优先级相同</p>
+<ul>
+<li>例如：c = -a * b，将执行-a再乘以b。</li>
+</ul>
+</li>
+<li><p>模运算符的优先级与乘法和除法的优先级相等</p>
+<ul>
+<li>a + b % c，即a + （b % c）</li>
+</ul>
+</li>
+<li><p>加法运算符比赋值运算符优先级高，除了逗号运算符其他都比赋值运算符优先级高</p>
+<ul>
+<li>a  /= b + c，即a = a / (b + c)                                                                                                                                                                                                           </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>@synthesize 和 @property</strong></p>
+<ul>
+<li>@property<ul>
+<li>如果在@interface中声明的 x 变量，编译器将会自动生成getter和setter的方法，编译器也会将生成的实例变量加上下划线( _ )变成 _x。</li>
+</ul>
+</li>
+<li>@synthesize<ul>
+<li>如果在@interface中声明的 x 变量，编译器将会自动生成getter和setter的方法，如果在实现代码部分声明 <code>@synthesize x;</code>或者<code>@synthesize x = _x;</code>编译器生成的实例变量就是你在@interface中声明的实例变量。</li>
+<li>如果在@interface中声明的 x 变量，但你没有在@interface声明其它实例变量如<code>a</code>，而直接在代码部分声明<code>synthesize x = a;</code>那么编译器会给你生成一个<code>a</code>的实例变量，而且只会只能访问实例变量<code>a</code>不能访问<code>_a</code>也不能访问<code>x</code>和<code>_x</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>变量初始值</strong></p>
+<ul>
+<li>局部变量：初始值为nil，所以需要使用前初始化<ul>
+<li>调用方法或者执行语句时纯在，存储在栈中。</li>
+</ul>
+</li>
+<li>实例变量：初始值为0<ul>
+<li>随着对象的创建而存在，随着对象的消失而消失，存储在堆中。</li>
+<li>对象持有数据</li>
+</ul>
+</li>
+<li>静态变量（static）：初始值为0<ul>
+<li>可以通过对象或者类调用，存储在方法区的静态区</li>
+<li>随着类的创建而存在，类的消失而消失</li>
+<li>共享数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>self = [super init]</strong></p>
+<ul>
+<li>首先要调用父类的init方法，目的是将所有要调用的父类方法初始化</li>
+<li>其次是赋给self，因为为了防止父类初始化时release调self指向的空间而alloc一块，但是又可能alloc失败，这样就无法执行if语句。</li>
+</ul>
+</li>
+<li><p><strong>define</strong></p>
+<ul>
+<li>宏定义define是一个变量，没有类型信息，在内存中会有多个拷贝。</li>
+<li>也可以定义常量，但是define定义的常量可以改变</li>
+</ul>
+</li>
+<li><p><strong>const</strong></p>
+<ul>
+<li><p>修饰的变量不可变</p>
+</li>
+<li><p>定义的常量在程序运行中会有一份拷贝</p>
+</li>
+<li><p>编译器通常不为普通const常量分配存储空间，而是将它们存储在符号表中，使得它成为一个编译期间的常量，没有了存储与内存的操作，使得它效率高。</p>
+</li>
+<li><p>const定义的右边是不可改变的，也就是说const修饰的是它右边的部分。</p>
+</li>
+<li><figure class="highlight plain"><figcaption><span>const int kCount = 1;</span><a href="//此处定义的kCount后面都不能改变值，如果改变，则报错">link</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">static const int kCount = 1; //此处定义的kCount后面都不能改变值，如果改变，则报错</div><div class="line">static const NSString *kStr1 = @&quot;alun1&quot;;//此处定义的kStr1可修改其值，但是修改过后他们的内存地址一样。</div><div class="line">static NSString const *kStr1 = @&quot;alun1&quot;;//跟上面的定义写法不同，但是结果一样</div><div class="line">static NSString* const kStr2 = @&quot;alun2&quot;;//此处定义的kStr2不能改变，否则会发生错误</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>extern</strong></p>
+<ul>
+<li>修饰全局变量。</li>
+<li>变量定义在源文件的某个位置，不加extern。在其它文件加extern声明这个变量就可以使用</li>
+<li>修饰的变量没有分配内存</li>
+</ul>
+</li>
+<li><p>static</p>
+<ul>
+<li>用户不能直接方法static修饰的变量，</li>
+<li>static后的语句可以使用它修饰的变量。类可以访问static修饰的变量</li>
+</ul>
+</li>
+<li><p><strong>枚举类型</strong></p>
+<ul>
+<li>enum声明，枚举标识符可以对应一个特定的整数值，你可以指定，或者列表中出现的标识符以整数0或者指定的数开始自+1。<ul>
+<li><code>enum direction {up, down, left = 10, right};</code>，因为up位于首位，所以编译器就给up赋值为0， down为1，right为11</li>
+</ul>
+</li>
+<li>定义的枚举标识符，必须与相同作用域之内的变量名不同。</li>
+<li>定义一个枚举，相当于一系列#define定义</li>
+</ul>
+</li>
+<li><p><strong>typedef</strong></p>
+<ul>
+<li>声明新的类型代替已有的类型名<ul>
+<li><figure class="highlight plain"><figcaption><span>char gender; ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- ```gender a;等同于char a;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>typedef enum</strong></p>
+<ul>
+<li>定义一个数据类型，且该类型的变量值只能在enum范围内取</li>
+<li>定义的是一个数据类型。而enum定义的是一个变量</li>
+</ul>
+</li>
+<li><p><strong>分类（Category）</strong></p>
+<ul>
+<li>将类的定义模块化到相关方法的组或分类中</li>
+<li>扩展现有类，不用创建子类</li>
+<li>可以添加方法，不能添加实例变量</li>
+<li>优先级高，可以覆盖原方法</li>
+<li>不可以调用super方法</li>
+<li>可以不用实现，需要调用的时候实现</li>
+</ul>
+</li>
+<li><p><strong>扩展（Extension）</strong></p>
+<ul>
+<li>可以添加方法，和成员变量</li>
+<li>添加方法如果不实现会报出警告⚠️</li>
+</ul>
+</li>
+<li><p><strong>成员变量与属性</strong></p>
+<ul>
+<li>属性可以生成一个带下划线的成员变量，而且还可以编译器还可以直接生成存取方法(getter和setter方法)</li>
+<li>成员变量有 private、protect、public，但是不会直接生成存取方法</li>
+</ul>
+</li>
+<li><p><strong>协议（protocol）</strong></p>
+<ul>
+<li>协议是一个多个类共享的方法列表<ul>
+<li>协议有很多方法，没有相应的实现，需要程序员去实现</li>
+<li><img src="http://img0.tuicool.com/rAzeAz.jpg!web" alt=""></li>
+<li>如果一个类遵守某个协议，子类也遵守</li>
+<li>协议是定义两个类的借口。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>代理（delegate）</strong>  </p>
+<ul>
+<li>通过协议定义的方法代理给了实现它们</li>
+</ul>
+</li>
+<li><p><strong>·#import””和#import&lt;&gt;</strong></p>
+<ul>
+<li>双引号导入的文件，首先先从包含源文件的头目中寻找，在从系统文件寻找。</li>
+<li>&lt;&gt;只在特殊的系统文件中寻找，当前文件不会被寻找。</li>
+</ul>
+</li>
+<li><p><strong>预编译语句</strong></p>
+<ul>
+<li><p><code>#define</code></p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#ifdef 指定符号判断</div><div class="line">	#define</div><div class="line">#endif</div><div class="line">	#define</div><div class="line">#else</div><div class="line"></div><div class="line">#idndef</div><div class="line">	NSLog(@&quot;&quot;);</div><div class="line">#endif</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#if 表达式是否为0</div><div class="line">	#define</div><div class="line">#elif(#endif)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>#undef</code>消除定义，即之后就不能再调用这个消除后的变量</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Set</strong></p>
+<ul>
+<li>NSSet和NSArray<ul>
+<li>set是无序的，用来进行搜索时，比NSArray效率高，是因为NSSet有一个算法hash；例如，要存储元素A，在NSSet中，一个hash算法就可以直接找到A的位置，而存储在NSArray中，就需要遍历整个数组才能判断A在不在数组中，效率降低</li>
+</ul>
+</li>
+<li>NSIndexSet<ul>
+<li>存储一系列的索引值区间</li>
+<li>可以用NSUInteger或者NSRange来表示</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>内存管理</strong></p>
+<ul>
+<li><p>自动垃圾收集</p>
+<ul>
+<li>自动检测对象是否拥有其他对象，当程序执行需要空间的时候，不再被引用的对象会被自动释放（垃圾回收）</li>
+<li>不过iOS平台并不支持垃圾回收</li>
+<li>OS平台也不推荐使用垃圾回收</li>
+</ul>
+</li>
+<li><p>手动引用计数和自动释放池</p>
+<ul>
+<li>创建对象是引用计数为1，每当创建引用到对象引用计数就会➕1.</li>
+<li>引用计数为0是，就不能调用这个对象，就需要调用NSObject的dealloc销毁。</li>
+<li>NSAutoreleasePool创建的目的就是，自动释放池可以追踪需要延迟释放的对象，通过给自动释放池发送drain，释放池被清理，对象被释放</li>
+<li>当执行到autorealease末尾时，系统会释放池</li>
+<li>总结<ul>
+<li>retain——不销毁，使用完后release</li>
+<li>发送release对象不会被销毁，当引用计数为0时对象才会销毁。然后系统发送dealloc释放内存</li>
+<li>使用了retain、copy、mutableCopy、new、alloc的对象或者retain、copy的属性释放时需要覆盖dealloc方法，这样才能保证释放的时候释放这些实例变量</li>
+<li>应用终止时，内存中对象会全部释放</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>自动引用计数（ARC）</p>
+<ul>
+<li>所有对象指针变量都是强变量啊 </li>
+<li>强变量，旧的对象在赋值前被释放，新的对象被保留。强变量默认初始值为0.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>-   弱变量，建立两个变量之前的联系，防止循环引用。创建其它类型的对象变量，并允许使用不同类型的引用（弱引用） 
+</code></pre><ul>
+<li><p><strong>赋值</strong></p>
+<ul>
+<li>简单复制<ul>
+<li>数组1=数组2；如果删除数组2的某个数据，数组1也会被删除。 </li>
+</ul>
+</li>
+<li>copy复制<ul>
+<li>复制一份再赋值；如果删除数组2的某个数据，数组1不会改变。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Copy</strong></p>
+<ul>
+<li><p>浅复制</p>
+<ul>
+<li>修改数组1的某个元素，数组2也会被修改。因为内存中新的数组分配了内存空间，并将单个元素赋值到新数组中，将原始数组中的元素赋值到新位置：是将引用从一个数组元素复制到另一个元素。导致两个数组中的元素都指向内存中的同一个字符串</li>
+</ul>
+</li>
+<li><p>深复制</p>
+<ul>
+<li>会将单个元素创建自己的副本。                                                                                                                          </li>
+</ul>
+</li>
+<li><p><img src="http://upload-images.jianshu.io/upload_images/655393-3639d66f6ecf3b97.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt=""></p>
+</li>
+<li><p>其他类要实现copy必须实现<nscoping>协议，</nscoping></p>
+</li>
+<li><p>可以通过归档来实现深复制</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- archiveDataWithRootObject</div><div class="line">- unArchiveObjectWithData</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>属性</strong></p>
+<ul>
+<li>assign（ARC/MRC）<ul>
+<li>直接赋值</li>
+<li>用于简单的数据类型，因为基础数据分配在栈上，栈的内存会被系统自动处理，不会造成野指针</li>
+<li>修饰的指针指向某个对象时引用计数不被改变，不会持有对象</li>
+<li>如果修饰对象，修饰的对象分配在堆上</li>
+<li>指向的对象可能会在别处释放，指针不会被释放，成为悬挂指针</li>
+</ul>
+</li>
+<li>weak（ARC）<ul>
+<li>直接赋值</li>
+<li>适用于NSObject对象，是一个弱引用</li>
+<li>修饰的对象释放后，指针地址会被置为nil</li>
+<li>解决循环引用</li>
+</ul>
+</li>
+<li>retain（MRC）<ul>
+<li>不能修饰简单数据类型</li>
+<li>如果被修饰，会持有它指向的对象</li>
+<li>赋值时需要保留新值<code>[newCount retain];</code>即引用计数旧对象-1，retain新对象+1，再指向新对象</li>
+</ul>
+</li>
+<li>strong（ARC）<ul>
+<li>引用计数会➕1，直接赋值</li>
+<li>复制指向同一个指针</li>
+<li>在AR取代retain</li>
+</ul>
+</li>
+<li>copy（ARC/MRC）<ul>
+<li>不能修饰简单数据类型</li>
+<li>修饰的对象赋值时是拥有原有对象的拷贝</li>
+<li>需要实现<nscoping>协议的<code>copyWithZone</code>方法</nscoping></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>原子性</strong></p>
+<ul>
+<li>automic（默认）<ul>
+<li>线程安全，销毁系统资源</li>
+<li>保证同一时间只有一个线程调用set方法，线程对属性的单一执行</li>
+<li>对生成的set方法加互斥锁@synthesize(锁对象)</li>
+</ul>
+</li>
+<li>nonatomic<ul>
+<li>线程不安全</li>
+<li>不对set方法加同步锁，性能好</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>nil、Nil、NULL、NSNull</strong></p>
+<ul>
+<li>nil<ul>
+<li>对象为空<code>NSObject *obj = nil;</code></li>
+</ul>
+</li>
+<li>Nil<ul>
+<li>类为空<code>Class someClass = Nil;</code></li>
+</ul>
+</li>
+<li>NULL<ul>
+<li>基本数据对象指针为空<code>int *x = NULL;</code></li>
+</ul>
+</li>
+<li>NSNull<ul>
+<li>集合对象无法包含nil作为其具体值，所有nil用一个特定的对象NSUll表示</li>
+<li>提供了一个单例表示对象的nil值<code>+(NSNull *)null;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>@property</strong></p>
+<ul>
+<li>生成一个带下划线的成员变量和存取方法</li>
+<li>自动合成：编译器在编译时期执行，多有编辑器看不到“合成方法”</li>
+</ul>
+</li>
+</ul>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2017/02/16/SDWebImage-转/">
+        SDWebImage(转) →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo"><div id="comments"> 
+<?php if($this->allow('comment')): ?>
+<!-- 多说评论框 start -->
+
+	<div class="ds-thread" data-thread-key="<?php echo $this->cid;?>" data-title="<?php echo $this->title;?>" data-author-key="<?php echo $this->authorId;?>" data-url=""></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"jujuxw"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+<?php else: ?>
+<h4><?php _e('评论已关闭'); ?></h4> 
+<?php endif; ?> 
+</div></div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Juju. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Jujuxw" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

@@ -214,7 +214,114 @@
         <!-- // End height spacing helper -->
 
         <!-- ============================ END Hero Image =========================== -->
-      ##大家奥克兰的骄傲了三年多拉卡少女大可能
+      <section id="intro">
+
+```
+<div class="container">
+    <div class="row col-md-offset-2">
+        <div class="col-md-8">
+            <h1></h1>
+        </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">title: XML解析基础</div><div class="line">date: 2016-11-11 22:34:51</div><div class="line">tags:</div></pre></td></tr></table></figure>
+<h1 id="XML解析"><a href="#XML解析" class="headerlink" title="XML解析"></a>XML解析</h1><ul>
+<li><p>SAX解析</p>
+<ul>
+<li><p>写一个本地xml数据    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;students&gt;</div><div class="line">    &lt;student&gt;</div><div class="line">        &lt;name&gt;Juju&lt;/name&gt;</div><div class="line">        &lt;sex&gt;Female&lt;/sex&gt;</div><div class="line">        &lt;age&gt;20&lt;/age&gt;</div><div class="line">    &lt;/student&gt;</div><div class="line">    &lt;student&gt;</div><div class="line">        &lt;name&gt;Julia&lt;/name&gt;</div><div class="line">        &lt;sex&gt;Female&lt;/sex&gt;</div><div class="line">        &lt;age&gt;19&lt;/age&gt;</div><div class="line">    &lt;/student&gt;</div><div class="line">    &lt;student&gt;</div><div class="line">        &lt;name&gt;Junior&lt;/name&gt;</div><div class="line">        &lt;sex&gt;Male&lt;/sex&gt;</div><div class="line">        &lt;age&gt;21&lt;/age&gt;</div><div class="line">    &lt;/student&gt;</div><div class="line">&lt;/students&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>写一个类，重写description的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (NSString *)description</div><div class="line">&#123;</div><div class="line">    return [NSString stringWithFormat:@&quot;name:%@, sex:%@, age:%@&quot;, self.name, self.sex, self.age];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>实现xml解析，首先要先找到xml文件的路径<code>NSString *fileName = [[NSBundle mainBundle] pathForResource:@&quot;Student&quot; ofType:@&quot;xml&quot;];</code>，再通过路径创建一个连接<code>NSURL *url = [[NSURL alloc] initFileURLWithPath:fileName];</code>再根据yrl创建解析的类<code>NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];</code></p>
+</li>
+<li><p>设置代理<code>parser.delegate = self;</code>，开始解析<code>[parser parse];</code></p>
+</li>
+<li><p>实现以下方法，开始解析到解析完毕</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//开始解析文档</div><div class="line">- (void)parserDidStartDocument:(NSXMLParser *)parser;</div><div class="line">//开始解析文档的标签</div><div class="line">- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary&lt;NSString *,NSString *&gt; *)attributeDict;</div><div class="line">//开始解析文档内容</div><div class="line">- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string;</div><div class="line">//遇到结束标签</div><div class="line">- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;</div><div class="line">//解析文档结束</div><div class="line">- (void)parserDidEndDocument:(NSXMLParser *)parser;</div></pre></td></tr></table></figure>
+</li>
+<li><p>编译运行的结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line">2016-11-11 11:44:49.247 XML_Study[90199:800056] 开始解析文档</div><div class="line">2016-11-11 11:44:49.248 XML_Study[90199:800056] 遇到开始标签:students</div><div class="line">2016-11-11 11:44:49.248 XML_Study[90199:800056] 遇到内容:</div><div class="line">    </div><div class="line">2016-11-11 11:44:49.249 XML_Study[90199:800056] 遇到开始标签:student</div><div class="line">2016-11-11 11:44:49.249 XML_Study[90199:800056] 遇到内容:</div><div class="line">        </div><div class="line">2016-11-11 11:44:49.250 XML_Study[90199:800056] 遇到开始标签:name</div><div class="line">2016-11-11 11:44:49.251 XML_Study[90199:800056] 遇到内容:Juju</div><div class="line">2016-11-11 11:44:49.251 XML_Study[90199:800056] 遇到结束标签:name</div><div class="line">2016-11-11 11:44:49.252 XML_Study[90199:800056] 遇到内容:</div><div class="line">        </div><div class="line">2016-11-11 11:44:49.252 XML_Study[90199:800056] 遇到开始标签:sex</div><div class="line">2016-11-11 11:44:49.253 XML_Study[90199:800056] 遇到内容:Female</div><div class="line">2016-11-11 11:44:49.253 XML_Study[90199:800056] 遇到结束标签:sex</div><div class="line">2016-11-11 11:44:49.253 XML_Study[90199:800056] 遇到内容:</div><div class="line">        </div><div class="line">2016-11-11 11:44:49.254 XML_Study[90199:800056] 遇到开始标签:age</div><div class="line">2016-11-11 11:44:49.254 XML_Study[90199:800056] 遇到内容:20</div><div class="line">2016-11-11 11:44:49.255 XML_Study[90199:800056] 遇到结束标签:age</div><div class="line">2016-11-11 11:44:49.255 XML_Study[90199:800056] 遇到内容:</div><div class="line">    </div><div class="line">2016-11-11 11:44:49.256 XML_Study[90199:800056] 遇到结束标签:student</div><div class="line">2016-11-11 11:44:49.256 XML_Study[90199:800056] 遇到内容:</div><div class="line">    </div><div class="line">2016-11-11 11:44:49.257 XML_Study[90199:800056] 遇到开始标签:student</div><div class="line">2016-11-11 11:44:49.257 XML_Study[90199:800056] 遇到内容:</div><div class="line">        </div><div class="line">2016-11-11 11:44:49.257 XML_Study[90199:800056] 遇到开始标签:name</div><div class="line">2016-11-11 11:44:49.258 XML_Study[90199:800056] 遇到内容:Julia</div><div class="line">2016-11-11 11:44:49.258 XML_Study[90199:800056] 遇到结束标签:name</div><div class="line">2016-11-11 11:44:49.258 XML_Study[90199:800056] 遇到内容:</div><div class="line">        </div><div class="line">2016-11-11 11:44:49.259 XML_Study[90199:800056] 遇到开始标签:sex</div><div class="line">2016-11-11 11:44:49.259 XML_Study[90199:800056] 遇到内容:Female</div><div class="line">2016-11-11 11:44:49.259 XML_Study[90199:800056] 遇到结束标签:sex</div><div class="line">2016-11-11 11:44:49.260 XML_Study[90199:800056] 遇到内容:</div><div class="line">        </div><div class="line">2016-11-11 11:44:49.260 XML_Study[90199:800056] 遇到开始标签:age</div><div class="line">2016-11-11 11:44:49.260 XML_Study[90199:800056] 遇到内容:19</div><div class="line">2016-11-11 11:44:49.260 XML_Study[90199:800056] 遇到结束标签:age</div><div class="line">2016-11-11 11:44:49.260 XML_Study[90199:800056] 遇到内容:</div><div class="line">    </div><div class="line">2016-11-11 11:44:49.261 XML_Study[90199:800056] 遇到结束标签:student</div><div class="line">2016-11-11 11:44:49.261 XML_Study[90199:800056] 遇到内容:</div><div class="line">    </div><div class="line">2016-11-11 11:44:49.261 XML_Study[90199:800056] 遇到开始标签:student</div><div class="line">2016-11-11 11:44:49.261 XML_Study[90199:800056] 遇到内容:</div><div class="line">        </div><div class="line">2016-11-11 11:44:49.262 XML_Study[90199:800056] 遇到开始标签:name</div><div class="line">2016-11-11 11:44:49.262 XML_Study[90199:800056] 遇到内容:Junior</div><div class="line">2016-11-11 11:44:49.262 XML_Study[90199:800056] 遇到结束标签:name</div><div class="line">2016-11-11 11:44:49.262 XML_Study[90199:800056] 遇到内容:</div><div class="line">        </div><div class="line">2016-11-11 11:44:49.263 XML_Study[90199:800056] 遇到开始标签:sex</div><div class="line">2016-11-11 11:44:49.263 XML_Study[90199:800056] 遇到内容:Male</div><div class="line">2016-11-11 11:44:49.263 XML_Study[90199:800056] 遇到结束标签:sex</div><div class="line">2016-11-11 11:44:49.263 XML_Study[90199:800056] 遇到内容:</div><div class="line">        </div><div class="line">2016-11-11 11:44:49.263 XML_Study[90199:800056] 遇到开始标签:age</div><div class="line">2016-11-11 11:44:49.264 XML_Study[90199:800056] 遇到内容:21</div><div class="line">2016-11-11 11:44:49.264 XML_Study[90199:800056] 遇到结束标签:age</div><div class="line">2016-11-11 11:44:49.264 XML_Study[90199:800056] 遇到内容:</div><div class="line">    </div><div class="line">2016-11-11 11:44:49.264 XML_Study[90199:800056] 遇到结束标签:student</div><div class="line">2016-11-11 11:44:49.264 XML_Study[90199:800056] 遇到内容:</div><div class="line">2016-11-11 11:44:49.265 XML_Study[90199:800056] 遇到结束标签:students</div><div class="line">2016-11-11 11:44:49.265 XML_Study[90199:800056] 解析文档结束</div><div class="line">2016-11-11 11:44:49.265 XML_Study[90199:800056] name:Juju, sexFemale, age@20</div><div class="line">2016-11-11 11:44:49.266 XML_Study[90199:800056] name:Julia, sexFemale, age@19</div><div class="line">2016-11-11 11:44:49.267 XML_Study[90199:800056] name:Junior, sexMale, age@21</div></pre></td></tr></table></figure>
+<p>​</p>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+
+        <div class="clearfix"></div>
+    </div>
+    
+</div>
+```
+
+</section>
+<section id="process">
+
+```
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+            <div class="timeline-centered">
+                <div class="line"></div>
+                <div class="present">Past</div>
+                <div class="dot_tp"></div>
+                <div class="born">Now</div>
+                <div class="dot_bt"></div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">1</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>2014/06/12-Start</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">2</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>2014/11/29-XXX</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">3</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>2015/02/18-DDD</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">4</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>More</p>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+            <!-- timeline-centered -->
+        </div>
+    </div>
+</div>
+```
+
+</section>
 
       
 <!-- ============================ Footer =========================== -->

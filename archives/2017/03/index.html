@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>SDWebImage(转) | Juju</title>
+  <title>Archives: 2017/3 | Juju</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -215,99 +215,37 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-<section id="intro">
+
+
+<section id="services">
     <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2017-02-16T14:02:49.000Z" itemprop="datePublished">
-          2017-02-16
-      </time>
-    
-</span>
-                <h1>SDWebImage(转)</h1>
-            </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2017/03/04/Objective-C基础累计/">Objective-C基础累计</a></h4>
+                            
+                            <p><time datetime="2017-03-04T14:37:40.000Z"><a href="/2017/03/04/Objective-C基础累计/">2017-03-04</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h2 id="SDWebImage-转"><a href="#SDWebImage-转" class="headerlink" title="SDWebImage(转)"></a>SDWebImage(转)</h2><ul>
-<li><p>功能</p>
-<ul>
-<li>扩展UIImageView，UIButton，MKAnnotationView，增加网络图片与缓存管理</li>
-<li>一个异步的图片管理器</li>
-<li>一个 异步+磁盘 图片缓存，拥有自动的缓存过期处理机制</li>
-<li>支持后台图片解压缩处理</li>
-<li>确保同一个URL的图片不被下载多次</li>
-<li>确保虚假的URL不会被反复下载</li>
-<li>确保下载与缓存时，主线程不被阻塞</li>
-<li>使用GCD与ARC</li>
-</ul>
-</li>
-<li><p>组织架构</p>
-<ul>
-<li>SDWebImageDownloader负责维持图片的下载队列</li>
-<li>SDWebImageDownloaderOperation负责真正的图片下载请求</li>
-<li>SDImageCache负责图片的缓存</li>
-<li>SDWebImageManager是总的管理类，维护了一个SDWebImageDownloader实例和一个SDImageCache实例，是下载与缓存的桥梁</li>
-<li>SDWebImageDecoder负责图片的解压缩</li>
-<li>SDWebImagePrefetcher负责图片的领取</li>
-<li>UIImageView+WebCache和其他扩展都是与用户直接打交道</li>
-</ul>
-</li>
-<li><p>UIImageVIew + WebCache</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (void)setImageWithURL:(NSURL *)url;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options;</div><div class="line">- (void)setImageWithURL:(NSURL *)url completed:(SDWebImageCompletedBlock)completedBlock;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletedBlock)completedBlock;</div><div class="line">- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDWebImageCompletedBlock)completedBlock;</div></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight plain"><figcaption><span>(void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock；```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- SDWebImageManager</div><div class="line"></div><div class="line">  -</div></pre></td></tr></table></figure>
-<p>//操作完成的回调，被上层的扩展调用。<br>typedef void(^SDWebImageCompletionBlock)(UIImage <em>image, NSError </em>error, SDImageCacheType cacheType, NSURL <em>imageURL);<br>//被SDWebImageManager调用。如果使用了SDWebImageProgressiveDownload标记，这个block可能会被重复调用，直到图片完全下载结束，finished=true,再最后调用一次这个block。<br>typedef void(^SDWebImageCompletionWithFinishedBlock)(UIImage </em>image, NSError <em>error, SDImageCacheType cacheType, BOOL finished, NSURL </em>imageURL);<br>//SDWebImageManager每次把URL转换为cache key的时候调用，可以删除一些image URL中的动态部分。<br>typedef NSString <em>(^SDWebImageCacheKeyFilterBlock)(NSURL </em>url);<br>```</p>
-</li>
-</ul>
-</li>
-</ul>
+    </div>
+</section> 
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p></p>
         </div>
-        <nav class="pagination" role="pagination">
-    
-    <a class="pull-left" href="/2017/03/04/Objective-C基础累计/" style="float: left;">
-        ← Objective-C基础累计
-    </a>
-    
-    
-    <a class="pull-right" href="/2017/01/03/赴美带薪实习感悟/">
-        赴美带薪实习感悟 →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo"><div id="comments"> 
-<?php if($this->allow('comment')): ?>
-<!-- 多说评论框 start -->
-
-	<div class="ds-thread" data-thread-key="<?php echo $this->cid;?>" data-title="<?php echo $this->title;?>" data-author-key="<?php echo $this->authorId;?>" data-url=""></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"jujuxw"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
-<?php else: ?>
-<h4><?php _e('评论已关闭'); ?></h4> 
-<?php endif; ?> 
-</div></div>
     </div>
 </section>
-
-
       
 <!-- ============================ Footer =========================== -->
 
