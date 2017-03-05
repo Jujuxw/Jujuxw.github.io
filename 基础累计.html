@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Objective-C基础累计 | Juju</title>
+  <title>Juju</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -214,27 +214,17 @@
         <!-- // End height spacing helper -->
 
         <!-- ============================ END Hero Image =========================== -->
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2017-03-04T14:37:40.000Z" itemprop="datePublished">
-          2017-03-04
-      </time>
-    
-    
-    | 
-    <a href='/tags/Objective-C-基础/'>Objective-C 基础</a>
-    
-    
-</span>
-                <h1>Objective-C基础累计</h1>
-            </div>
+      <section id="intro">
+
+```
+<div class="container">
+    <div class="row col-md-offset-2">
+        <div class="col-md-8">
+            <h1></h1>
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h2 id="基础累计"><a href="#基础累计" class="headerlink" title="基础累计"></a>基础累计</h2><ul>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        <h2 id="基础累计"><a href="#基础累计" class="headerlink" title="基础累计"></a>基础累计</h2><ul>
 <li><p><strong>经典命名法则：</strong></p>
 <ul>
 <li>匈牙利命名法：<ul>
@@ -495,29 +485,24 @@
 </li>
 <li><p><strong>Copy</strong></p>
 <ul>
-<li><p>浅复制</p>
-<ul>
+<li>浅复制<ul>
 <li>修改数组1的某个元素，数组2也会被修改。因为内存中新的数组分配了内存空间，并将单个元素赋值到新数组中，将原始数组中的元素赋值到新位置：是将引用从一个数组元素复制到另一个元素。导致两个数组中的元素都指向内存中的同一个字符串</li>
 </ul>
 </li>
-<li><p>深复制</p>
-<ul>
+<li>深复制<ul>
 <li>会将单个元素创建自己的副本。                                                                                                                          </li>
 </ul>
 </li>
-<li><p><img src="http://upload-images.jianshu.io/upload_images/655393-3639d66f6ecf3b97.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt=""></p>
-</li>
-<li><p>其他类要实现copy必须实现<nscoping>协议，</nscoping></p>
-</li>
-<li><p>可以通过归档来实现深复制</p>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- archiveDataWithRootObject</div><div class="line">- unArchiveObjectWithData</div></pre></td></tr></table></figure>
-<p>​```</p>
-</li>
+<li><img src="http://upload-images.jianshu.io/upload_images/655393-3639d66f6ecf3b97.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt=""></li>
 </ul>
 </li>
 </ul>
-<ul>
+<pre><code>-   其他类要实现copy必须实现&lt;NSCoping&gt;协议，
+
+-   可以通过归档来实现深复制
+
+    -   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- archiveDataWithRootObject</div><div class="line">- unArchiveObjectWithData</div></pre></td></tr></table></figure>
+</code></pre><ul>
 <li><p><strong>属性</strong></p>
 <ul>
 <li>assign（ARC/MRC）<ul>
@@ -599,49 +584,78 @@
 </li>
 </ul>
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
-    
-    <a class="pull-left" href="/2017/03/05/初识Runtime/" style="float: left;">
-        ← 初识Runtime
-    </a>
-    
-    
-    <a class="pull-right" href="/2017/02/16/SDWebImage-转/">
-        SDWebImage(转) →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo"><div id="comments"> 
-<?php if($this->allow('comment')): ?>
-<!-- 多说评论框 start -->
-
-	<div class="ds-thread" data-thread-key="<?php echo $this->cid;?>" data-title="<?php echo $this->title;?>" data-author-key="<?php echo $this->authorId;?>" data-url=""></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"jujuxw"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
-<?php else: ?>
-<h4><?php _e('评论已关闭'); ?></h4> 
-<?php endif; ?> 
-</div></div>
+        <div class="clearfix"></div>
     </div>
-</section>
+    
+</div>
+```
 
+</section>
+<section id="process">
+
+```
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+            <div class="timeline-centered">
+                <div class="line"></div>
+                <div class="present">Past</div>
+                <div class="dot_tp"></div>
+                <div class="born">Now</div>
+                <div class="dot_bt"></div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">1</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>2014/06/12-Start</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">2</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>2014/11/29-XXX</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">3</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>2015/02/18-DDD</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">4</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>More</p>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+            <!-- timeline-centered -->
+        </div>
+    </div>
+</div>
+```
+
+</section>
 
       
 <!-- ============================ Footer =========================== -->

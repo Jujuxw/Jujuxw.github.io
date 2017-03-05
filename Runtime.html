@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives | Juju</title>
+  <title>Juju</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -214,86 +214,227 @@
         <!-- // End height spacing helper -->
 
         <!-- ============================ END Hero Image =========================== -->
-      
+      <section id="intro">
 
-
-<section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/">HEXO+GitHub，搭建属于自己的博客，带你入坑啊哈</a></h4>
-                            
-                            <p><time datetime="2016-11-11T15:38:21.000Z"><a href="/2016/11/11/HEXO-GitHub，搭建属于自己的博客，带你入坑啊哈/">2016-11-11</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/11/11/学习XML解析基础篇/">学习XML解析基础篇</a></h4>
-                            
-                            <p><time datetime="2016-11-11T14:50:59.000Z"><a href="/2016/11/11/学习XML解析基础篇/">2016-11-11</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/11/11/学习JSON解析基础篇/">学习JSON解析基础篇</a></h4>
-                            
-                            <p><time datetime="2016-11-11T14:50:42.000Z"><a href="/2016/11/11/学习JSON解析基础篇/">2016-11-11</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/11/11/数据持久化的方式/">数据持久化的方式</a></h4>
-                            
-                            <p><time datetime="2016-11-11T14:49:36.000Z"><a href="/2016/11/11/数据持久化的方式/">2016-11-11</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/11/11/CoreData的初级使用/">CoreData的初级使用</a></h4>
-                            
-                            <p><time datetime="2016-11-11T14:34:51.000Z"><a href="/2016/11/11/CoreData的初级使用/">2016-11-11</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/11/11/hello-world/">Hello World</a></h4>
-                            
-                            <p><time datetime="2016-11-11T12:44:21.000Z"><a href="/2016/11/11/hello-world/">2016-11-11</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+```
+<div class="container">
+    <div class="row col-md-offset-2">
+        <div class="col-md-8">
+            <h1></h1>
         </div>
     </div>
-</section> 
+    <div class="col-md-8 col-md-offset-2">
+        <h2 id="Runtime"><a href="#Runtime" class="headerlink" title="Runtime"></a>Runtime</h2><p>其实看了一些别人讲的教程，对Runtime的认识还是很模糊，希望之后多实践可以加深了解</p>
+<hr>
+<ul>
+<li><p><strong>定义</strong></p>
+<ul>
+<li>实现Objective-C语言的C库</li>
+<li>对象可以是C语言中的结构体表示</li>
+<li>方法可以用C函数实现</li>
+</ul>
+</li>
+<li><p><strong>最终执行代码</strong></p>
+<ul>
+<li>如果执行[object doSomething];时</li>
+<li>首先会向消息接受者objec发送一条消息doSomething；</li>
+<li>Runtime会根据消息接收者是否能响应做出不同的反应</li>
+</ul>
+</li>
+<li><p><strong>Runtime中的消息</strong></p>
+<ul>
+<li>message（消息）<ul>
+<li>一种抽象，包括了函数名+参数列表</li>
+</ul>
+</li>
+<li>method（方法）</li>
+<li>selector（方法选择器）<ul>
+<li>通过SEL定义，描述message或者method，可以通过selector来检索方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>_cmd关键字</strong></p>
+<ul>
+<li>通过这个关键字可以取到当前对应的SEL</li>
+</ul>
+</li>
+<li><p>OC下代码：<code>[tableview cellForRowAtIndexPath:indexPath]</code>在编译时Runtime会转换成【发送消息】<code>objc_msgSend(tableview, @selector(cellForRowAtIndexPath:), indexPath);</code></p>
+</li>
+<li><p>常见方法</p>
+<ul>
+<li><p>unsigned int count;</p>
+</li>
+<li><p>获取属性列表</p>
+<ul>
+<li><code>objc_property_t *propertyList = class_copyPropertyList([self class], &amp;count);</code></li>
+</ul>
+</li>
+<li><p>获取方法列表</p>
+<ul>
+<li><code>Method *methodList = class_copyMethodList([self class], &amp;count);</code></li>
+</ul>
+</li>
+<li><p>获取成员变量列表</p>
+<ul>
+<li><code>Ivar *ivarList = class_copyIvarLis([self class], &amp;count);</code></li>
+</ul>
+</li>
+<li><p>获取协议列表</p>
+<ul>
+<li><code>__unsafe_unretained Protocol **protocolList = class_copyProtocolList([self class], &amp;count);</code></li>
+</ul>
+</li>
+<li><p>有一个Person类，和创建的xiaoming对象，有test1、test2两种方法</p>
+</li>
+<li><p>获取类方法</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Class PersonClass = object_getClass([Person class]);</div><div class="line"></div><div class="line">SEL sel = @selector(test1);</div><div class="line"></div><div class="line">Method method = class_getInstanceMethod(xiaomingClass, sel);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>获取实例方法</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Class PersonClass = object_getClass([xiaoming class]);</div><div class="line"></div><div class="line">SEL sel = @selector(test2);</div><div class="line"></div><div class="line">Method method = class_getInstanceMethod(xiaomingClass,sel);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>增添方法</p>
+<ul>
+<li><code>class_addMethod(xiaomingClass, sel, method_getImplementation(method), method_getTypeEncoding(method));</code></li>
+</ul>
+</li>
+<li><p>替换原方法</p>
+<ul>
+<li><code>class_replaceMethod(toolClass, sel, method_getImplementation(method), method_getTypeEncoding(method));</code></li>
+</ul>
+</li>
+<li><p>交换两个方法</p>
+<ul>
+<li><code>method_exchangeImplementation(method1,method2);</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>功能作用</p>
+<ul>
+<li>动态的添加成员变量和方法</li>
+<li>动态交换两个方法的实现</li>
+<li>拦截并替换两个方法</li>
+<li>在方法上增添额外的功能</li>
+<li>实现NSCoding的归档和解档</li>
+<li>实现字典模型的自动转换</li>
+</ul>
+</li>
+<li><p>参数概念</p>
+<ul>
+<li>objc_msgSend<ul>
+<li>发送基本消息</li>
+<li><code>objc_msgSend_stret</code>发送返回值为结构体的消息</li>
+<li><code>objc_msgSend_fpret</code>发送返回值为浮点类型的消息</li>
+<li>还是使用<code>objc_msgSend_fp2ret</code>发送返回值为浮点类型的消息</li>
+</ul>
+</li>
+<li>SEL<ul>
+<li>是selector在Objc的表示，selector是方法选择器</li>
+<li>不同类中相同名字的方法对应的方法选择器是相同的</li>
+</ul>
+</li>
+<li>id<ul>
+<li>一个指向实例的指针</li>
+<li>objc_object包含一个isa指针，可以通过它找到实例所属的类，但不能依靠它找到实例的类型，而是用class来确定类型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>objc_msgSend函数</strong></p>
+<ul>
+<li>通过对象的isa指针找到它的类class</li>
+<li>在class的method list里找到该消息的实现</li>
+<li>如果没有找到，则到super_class（父类）中寻找</li>
+<li>一旦找到消息的实现，就去执行他的IMP</li>
+</ul>
+</li>
+<li><p><strong>IMP</strong></p>
+<ul>
+<li>函数指针</li>
+</ul>
+</li>
+</ul>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p></p>
-        </div>
+        <div class="clearfix"></div>
     </div>
+    
+</div>
+```
+
 </section>
+<section id="process">
+
+```
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+            <div class="timeline-centered">
+                <div class="line"></div>
+                <div class="present">Past</div>
+                <div class="dot_tp"></div>
+                <div class="born">Now</div>
+                <div class="dot_bt"></div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">1</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>2014/06/12-Start</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">2</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>2014/11/29-XXX</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">3</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>2015/02/18-DDD</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
+                                <span class="number">4</span>
+                            </div>
+                            <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
+                                <p>More</p>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+            <!-- timeline-centered -->
+        </div>
+    </div>
+</div>
+```
+
+</section>
+
       
 <!-- ============================ Footer =========================== -->
 
