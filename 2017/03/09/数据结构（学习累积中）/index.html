@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>无限循环+轮播 | Juju</title>
+  <title>数据结构（学习累积中） | Juju</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -220,45 +220,76 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2017-03-07T12:29:59.000Z" itemprop="datePublished">
-          2017-03-07
+      <time datetime="2017-03-09T08:35:41.000Z" itemprop="datePublished">
+          2017-03-09
       </time>
     
     
     | 
-    <a href='/tags/NSTimer-UIImageView-UIScrollView-UIPageController/'>NSTimer UIImageView UIScrollView UIPageController</a>
+    <a href='/tags/算法-时间复杂度/'>算法 时间复杂度</a>
     
     
 </span>
-                <h1>无限循环+轮播</h1>
+                <h1>数据结构（学习累积中）</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><hr>
-<p>​    之前写图片轮播的时候一直用的是（N+2）的方式添加图片，但是想到如果我要添加很多很多图片的话，那就gg了。</p>
-<p>​    现在可以有一种只添加3个imageView的方式就可以实现图片轮播的方式，加上NSTimer这就更完美了，可以无限循环的哦。（此时我想到了面试一般会问到Runloop是干嘛的！此时结合一下，我就可以感觉到了O(∩_∩)O~）</p>
-<hr>
+      		<h3 id="iOS常见的算法（学习中）"><a href="#iOS常见的算法（学习中）" class="headerlink" title="iOS常见的算法（学习中）"></a>iOS常见的算法（学习中）</h3><hr>
 <ul>
-<li>加载ScrollView</li>
-<li>定义3个imageView来承载图片</li>
-<li>加载PageController</li>
-<li>实现<uiscrollviewdelegate>的协议方法</uiscrollviewdelegate></li>
-<li>定义定时器实现循环</li>
+<li>冒泡算法</li>
+<li>选择排序<ul>
+<li>先从未排序的的序列中找到最小（大）值，存放到排序的起始位置</li>
+<li>再从剩余未排序的元素中寻找最大（小）值，存放到已排序的末尾</li>
+<li>循环，直到结束。</li>
 </ul>
-<p>具体实现就看我的代码了：<a href="https://github.com/Jujuxw/JPictureCircle" target="_blank" rel="external">Github</a></p>
+</li>
+<li>快速排序<ul>
+<li>以第一个数为基数</li>
+<li>从右边开始，比基数大放右边，比基数小放左边</li>
+<li>接着从左边开始，比基数大放右边比基数小放左边</li>
+<li>再判断比较最左边和最右边两个数变化后的位置</li>
+<li>始终保持小的在左边大的在右边</li>
+<li>递归</li>
+</ul>
+</li>
+<li>归并排序</li>
+<li>二分法查找排序</li>
+<li>二叉树遍历</li>
+</ul>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><hr>
+<ul>
+<li><p>如果算法的执行时间不随着问题规模n的增加而增长，即使算法中有上千条语句，其执行时间也不过是一个较大的常数。此类算法的时间复杂度是O(1)。            </p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">x=91; y=100;</div><div class="line">while(y&gt;0) &#123;</div><div class="line">	if(x&gt;100) &#123;</div><div class="line">		x=x-10;</div><div class="line">		y--;</div><div class="line">	&#125; else </div><div class="line">	x++;</div><div class="line">&#125;</div><div class="line">T(n) = O(1)</div></pre></td></tr></table></figure>
+</li>
+<li><p>当有若干个循环语句时，算法的时间复杂度是由嵌套层数最多的循环语句中最内层语句的频度f(n)决定的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">x=1; </div><div class="line">for(i=1;i&lt;=n;i++) </div><div class="line">	for(j=1;j&lt;=i;j++)</div><div class="line">    	for(k=1;k&lt;=j;k++)</div><div class="line">        	x++; </div><div class="line">        	</div><div class="line">T(n) = O(n3)</div></pre></td></tr></table></figure>
+</li>
+<li><p>算法的时间复杂度不仅仅依赖于问题的规模，还与输入实例的初始状态有关。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">A[0...n-1]查找给定k值得算法</div><div class="line">i=n-1;            </div><div class="line">while(i&gt;=0&amp;&amp;(A[i]!=k))       </div><div class="line">      i--;        </div><div class="line">return i;</div><div class="line"></div><div class="line">如果</div></pre></td></tr></table></figure>
+</li>
+<li><p>O(1): 表示算法的运行时间为常量</p>
+</li>
+<li>O(n): 表示该算法是线性算法</li>
+<li>O(㏒2n): 二分查找算法</li>
+<li>O(n2): 对数组进行排序的各种简单算法，例如直接插入排序的算法。</li>
+<li>O(n3): 做两个n阶矩阵的乘法运算</li>
+<li>O(2n): 求具有n个元素集合的所有子集的算法</li>
+<li>O(n!): 求具有N个元素的全排列的算法</li>
+<li>优&lt;—————————&lt;劣<ul>
+<li>O(1)&lt;O(㏒2n)&lt;O(n)&lt;O(n2)&lt;O(2n)</li>
+</ul>
+</li>
+</ul>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2017/03/09/数据结构（学习累积中）/" style="float: left;">
-        ← 数据结构（学习累积中）
-    </a>
     
-    
-    <a class="pull-right" href="/2017/03/05/初识Runtime/">
-        初识Runtime →
+    <a class="pull-right" href="/2017/03/07/无限循环-轮播/">
+        无限循环+轮播 →
     </a>
     
 </nav>
