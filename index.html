@@ -222,6 +222,113 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/2017/03/10/NSCalendar/">NSCalendar </a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-03-10T08:05:22.000Z" itemprop="datePublished">
+          2017-03-10
+      </time>
+    
+    
+    | 
+    <a href='/tags/NSCalendar-NSDateComponents/'>NSCalendar NSDateComponents</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        NSCalendar
+
+NSCalendarIdentifierIslamicUmmAlQura
+NSCalendarIdentifierEthiopicAmeteMihret 
+NSCalendarIdentifierEthiopicAmeteAlem
+NSCalendarIdentifierPersian
+NSCalendarIdentifierBuddhist
+
+
+使用这个类需要与NSDate结合
+
+12返回新的NSDate对象，
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/03/10/NSCalendar/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2017/03/10/对Core-Animation的了解/">对Core Animation的了解</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-03-10T08:03:25.000Z" itemprop="datePublished">
+          2017-03-10
+      </time>
+    
+    
+    | 
+    <a href='/tags/CABasicAnimation-CAKeyfarmeAnimation-CAlayer/'>CABasicAnimation CAKeyfarmeAnimation CAlayer</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        绘图Core Animation
+
+Core Animation的app拥有三个图层对象集合
+模型图层型
+存储所有动画的目标值
+
+
+呈现树
+包含所有运行中的动画的瞬时值
+
+
+渲染树
+执行实际的动画，并且是不公开的
+
+
+
+
+CAEmitterLayer 
+基于Core Animation的粒子发射器
+发射器层的对象控制粒子的生成和起源
+
+
+CAGradientLayer
+绘制颜色渐变填充图层的形状
+
+
+CAEAGLLayer / CAOp
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/03/10/对Core-Animation的了解/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/2017/03/09/面经——🌸-樱花树快开吧/">面经——🌸 樱花树快开吧</a></h3>
                     <span>
                         <span class="post-meta">
@@ -606,101 +713,6 @@ modal：如果A—&gt;B此模式，无法自动返回A，需要额外写代码
                     
                     <p class="pull-right readMore">
                         <a href="/2017/01/03/场景之间的跳转-更新/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/03/RunLoop概念/">RunLoop概念</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-03T02:26:05.000Z" itemprop="datePublished">
-          2017-01-03
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-概述
-运行循环
-由do-while循环实现
-
-
-作用
-保证程序的持续运行
-处理APP的各种事件（滑动，定时器，selector）
-节省CPU资源，提高程序性能
-Foundation
-NSRunLoop（OC语言）
-
-
-Core Foundation
-CFRunLoopRef（C语言）
-
-
-
-
-相关类：没有以下类，不会循环
-
-CFRunLoopModeRef
-
-代表了RunLoop的运行模式
-一个RunLoop可以包含若干个Mode，每
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/03/RunLoop概念/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/03/NSOperation相关概念/">NSOperation相关概念</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-03T02:24:20.000Z" itemprop="datePublished">
-          2017-01-03
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-配合使用NSOperation和NSOperationQueue也可以实现多线程
-先将需要执行的操作封装到一个NSOperation对象中
-将NSOperation对象添加到一个NSOperationQueue对象中
-系统会自动将NSOperationQueue中的NSOperation取出来
-将取出的NSOperation封装的操作放到一条线程中去执行
-
-
-抽象类，并不具有封装操作的能力，必须使用它的子类：
-
-NSInvocatio
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/03/NSOperation相关概念/">Read More...</a>
                     </p>
                     
                 </div>
