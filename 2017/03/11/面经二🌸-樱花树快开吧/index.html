@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2017 | Juju</title>
+  <title>面经二🌸 樱花树快开吧 | Juju</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -215,55 +215,222 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/01/03/场景之间的跳转-更新/">场景之间的跳转(更新)</a></h4>
-                            
-                            <p><time datetime="2017-01-03T02:27:44.000Z"><a href="/2017/01/03/场景之间的跳转-更新/">2017-01-03</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/01/03/RunLoop概念/">RunLoop概念</a></h4>
-                            
-                            <p><time datetime="2017-01-03T02:26:05.000Z"><a href="/2017/01/03/RunLoop概念/">2017-01-03</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/01/03/NSOperation相关概念/">NSOperation相关概念</a></h4>
-                            
-                            <p><time datetime="2017-01-03T02:24:20.000Z"><a href="/2017/01/03/NSOperation相关概念/">2017-01-03</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-03-11T14:52:16.000Z" itemprop="datePublished">
+          2017-03-11
+      </time>
+    
+    
+    | 
+    <a href='/tags/腾讯-一面/'>腾讯 一面</a>
+    
+    
+</span>
+                <h1>面经二🌸 樱花树快开吧</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p><strong>腾讯一面（可能就死在一面上了吧）此处省略一万字，因为我伤心着呢😭😢😢😭</strong></p>
+<hr>
+<ul>
+<li><p>tableView 的优化</p>
+<blockquote>
+<ul>
+<li>UITableViewCell的重用机制<ul>
+<li>将赋值和计算布局分开，即在heightForRow只设置高度，并缓存到数据源中</li>
+<li>异步绘制，自定义Cell的绘制</li>
+<li>按需加载</li>
+<li>使用reuseIdentifier重用cells</li>
+<li>减少不透明图层的使用</li>
+<li>如果cell的内容来自web，则异步加载缓存请求结果</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>加载图片优化</p>
+<blockquote>
+<ul>
+<li>ÍUIImage的内存处理<ul>
+<li>Resource与imageWithContentsOfFile：<ul>
+<li>将文件直接拖到工程目录下，告诉Xcode打包项目时将这些图片打包进去，这样在应用”.app”文件中就有这些图片</li>
+<li>创建图片是通过读取文件数据得到的，读取一次文件数据就回产生一次NSData和UI个UIImage，当图片创建好后销毁NSData，当UIImage的引用计数为0时自动销毁UIImage，这样的图片不会长期存在在内存中</li>
+<li>使用场景：图片数据很大，且不多次使用</li>
+<li>图片生命周期得到管理，减少了内存的占用</li>
+</ul>
+</li>
+<li>ImageAssets 与 imageNamed:<ul>
+<li>可以解决手机屏幕的适配问题</li>
+<li>图片缓存，相当于字典，key是图片名，value是图片对象，调用方法是从字典取，取到就直接返回，取不到就再去文件中创建，然后保存到字典再返回，因为key、value都是强引用，所以一旦创建后图片不销毁</li>
+<li>使用场景：用于icon图片</li>
+<li>多个icon被显示时，对应的UIImage对象只被创建一次，多个icon会公用一个UIImage对象，减少对沙盒的读取操作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>动画优化</p>
+</li>
+<li><p>数据持久化方式</p>
+</li>
+<li><p>HTTP和HTTPS</p>
+<blockquote>
+<ul>
+<li>HTTPS<ul>
+<li>以安全为目标的http通道，即http加入SSL层。</li>
+<li>加密的详细内容需要SSL，在浏览器就需要申请CA证书</li>
+</ul>
+</li>
+<li>https使用端口443，而http使用端口80来和TCP/IP进行通信</li>
+<li>http是明文传输，https则是具有安全性的ssl加密传输协议</li>
+<li>http连接简单、无状态的；https是由ssl+http协议构建的可进行加密传输、身份认证的网络协议，安全性高</li>
+<li>信任：使用https的server必须从CA申请一个用于证明服务器类型的证书，该证书只有用于对应的sever的时候，客户端才信任主机</li>
+<li>解决通信过程中数据的泄密和被篡改</li>
+<li>客户端产生一个对称的密钥，通过server的证书来交换密钥</li>
+<li>而https请求比较繁琐，因为http协议是一个post和一个response，而https因为加了加密算法需要多次握手</li>
+<li>https请求会影响性能</li>
+</ul>
+</blockquote>
+</li>
+<li><p>内存管理</p>
+</li>
+<li><p>多线程</p>
+</li>
+<li><p>drawRect频繁调用的问题</p>
+<blockquote>
+<ul>
+<li>大量消耗内存，因为创建点对象时没有及时的释放，或者其它资源不能及时的释放，或是系统在绘制过程中开始大量消耗内存</li>
+<li>因为重绘其实就是调用的UIView下的CALayer调用core graphics来绘制图形，而使用layer其实就是将图片寄宿在contens里</li>
+<li>而生成的寄宿器contents内存巨大，而每次重绘的时候就会抹掉数据重新分配，这样就会导致内存暴增</li>
+<li>解决办法<ul>
+<li>CAShapeLayer是一个矢量图形，调用CGPath绘制图形，而CAShapeLayer自动渲染，代替Core Graphics绘制layer,</li>
+<li>迅速渲染，CAShapeLayer使用了硬件加速</li>
+<li>高效使用内存</li>
+<li>不会被图层边界剪裁掉</li>
+<li>不会被像素化</li>
+</ul>
+</li>
+<li>绘图优化原则<ul>
+<li>优化的最好方法就是不绘图</li>
+<li>利用专有图层代替绘图需求</li>
+<li>如果一定要绘图，就要减小视图面积和降低重绘频率</li>
+<li>异步绘制，推测内容，在其他线程绘制图片，在主线程直接设置图片</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>MVC和MVVM的区别</p>
+</li>
+<li><blockquote>
+<p>MVVM将MVC中Controller的一些实现方法，移到ViewModel中区，减少了Controller中的代码实现，不过也会使ViewModel中的代码越来越多，Controller中的类越来越来。</p>
+</blockquote>
+</li>
+<li><p>堆排序</p>
+</li>
+<li><p>instruments的使用</p>
+</li>
+<li><p>如何实现缓存</p>
+<blockquote>
+<ul>
+<li>post网络请求不能被缓存，只有get请求可以</li>
+<li>调用原生框架的NSURLCache进行缓存，只需要设置内存缓存大小、磁盘大小、缓存路径</li>
+<li>文件缓存：借助ETag或者Last-Modified判断文件缓存是否有效</li>
+<li>Last-Modifield<ul>
+<li>服务器的文件存贮，采用资源变动后就重新生成一个链接的的做法</li>
+<li>资源最后修改的时间戳，往往与缓存时间进行对比来判断缓存是否过期</li>
+<li>第一次请求某一个URL时，一个Last-Modifield的属性会标记文件在服务器被修改的时间</li>
+<li>第二次请求此URL时，根据HTTP协议的规定，浏览器会向服务器传送If-Modifield-Since报头，询问时间之后文件是否被修改过</li>
+<li>如果服务器端的资源没有变化，则返回HTTP304状态码，内容为空节省了传输数据量。</li>
+<li>当服务器端发生改变或重启服务器时，则重新发送数据，返回和第一次请求类似，从而避免重复发出资源</li>
+<li>如果本地缓存最新，则使用本地缓存，如果服务器更新或本地无缓存则服务器请求资源</li>
+</ul>
+</li>
+<li>ETAG<ul>
+<li>HTTP协议规格说明定义ETAG为”被请求变量的实体值”；ETAG是一个可以与Web资源关联的记号。</li>
+<li>服务器不会每次都返回文件资源。客户端每次想服务器端发送上次服务器返回的ETAG值，服务器会根据客户端与服务端的ETAG值是否相等来决定返回data</li>
+<li>断点下载，检验数据（AFNetworking）</li>
+</ul>
+</li>
+<li>ETAG是基于hash，可以自己设置规则，强检验，而且基于一致性；Last-Modifielded是基于时间，弱检验，如果服务器资源回滚客户端的Last_Modifielded反而会被服务端还要新</li>
+<li>一般都会有Last_Modifielded字段，而ETAG并非所有服务端都会支持​</li>
+</ul>
+</blockquote>
+</li>
+<li><p>SDWebImage实现原理</p>
+<blockquote>
+<ul>
+<li>获取网络图片时，首先需要URL，获得URL后SDWebImage的实现不是直接去请求网络，而是检查缓存中有没有和url相关的图片，有则返回image</li>
+<li>如果没有，则检查沙盒中是否存在这个图片，有过沙盘有则把图片放到缓存中去再进行第一步</li>
+<li>如果沙盒也没有，则显示占位图，根据图片下载的队列缓存判断是否正在下载，如果下载则等待，避免第二次下载；如果不存在则创建，下载完毕后则从队列中清除，并将其存放到缓存中</li>
+<li>刷新UI，将image存入沙盒缓存</li>
+</ul>
+</blockquote>
+</li>
+<li><p>setNeedDisplay和setNeedsLayout区别</p>
+<blockquote>
+<ul>
+<li>两个方法都是异步执行的</li>
+<li>setNeedsDisplay会调用drawRect的方法，用于重绘</li>
+<li>setNeedsLayout会默认调用layoutSubViews，可以处理子视图的数据</li>
+<li>setNeedsLayout，标记为重新布局，异步调用layoutNeeded刷新布局，不会立即刷新，但layoutsubViews一定会被调用<ul>
+<li>init、addSubViews、frame、UIScrollView、旋转的Screen、改变UIView都会调用layoutSubViews</li>
+</ul>
+</li>
+<li>layoutIfNeeded，有刷新的标记，立即调用layoutSubViews进行布局</li>
+</ul>
+</blockquote>
+</li>
+</ul>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p></p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2017/03/10/NSCalendar/">
+        NSCalendar  →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo"><div id="comments"> 
+<?php if($this->allow('comment')): ?>
+<!-- 多说评论框 start -->
+
+	<div class="ds-thread" data-thread-key="<?php echo $this->cid;?>" data-title="<?php echo $this->title;?>" data-author-key="<?php echo $this->authorId;?>" data-url=""></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"jujuxw"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+<?php else: ?>
+<h4><?php _e('评论已关闭'); ?></h4> 
+<?php endif; ?> 
+</div></div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
