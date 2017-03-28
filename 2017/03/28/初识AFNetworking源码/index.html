@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Juju</title>
+  <title>初识AFNetworking源码 | Juju</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -214,166 +214,125 @@
         <!-- // End height spacing helper -->
 
         <!-- ============================ END Hero Image =========================== -->
-      <!-- ============================ Content =========================== -->
-
+      
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/学习JSON解析基础篇/">学习JSON解析基础篇</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T14:50:42.000Z" itemprop="datePublished">
-          2016-11-11
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-03-28T12:44:25.000Z" itemprop="datePublished">
+          2017-03-28
       </time>
     
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        学习JSON解析
-系统在带的JSON解析
-
-首先先创建空文件写入json数据
-1234567891011121314151617[&#123;&quot;name&quot; : &quot;小明&quot;,&quot;gender&quot; : &quot;男&quot;,&quot;age&quot; : &quot;12&quot;&#125;,&#123;&quot;name&quot; : &quot;小红&quot;,&
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/学习JSON解析基础篇/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/数据持久化的方式/">数据持久化的方式</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T14:49:36.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
+    
+    | 
+    <a href='/tags/AFNetworking-网络-协议/'>AFNetworking 网络 协议</a>
+    
     
 </span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        数据持久化的方式
-文件读写（NSString、NSArray、NSDictionary、NSData）
-归档
-NSUserDefaults
-SQLite
-SQL 结构化查询语言
-
-
-
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/数据持久化的方式/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
+                <h1>初识AFNetworking源码</h1>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/CoreData的初级使用/">CoreData的初级使用</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T14:34:51.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        CoreData_Study
-在创建工程的时候，一定要选CoreData！一定要选CoreData！一定要选CoreData！
+        <div class="col-md-8 col-md-offset-2">
+      		<p><strong><code>AFNetworking</code>其实是对NSURLSession的封装，一共有一下几块：</strong></p>
+<ol>
+<li><code>AFURLRequestSerialization.h</code>请求序列化<ol>
+<li>它继承了<code>&lt;NSObject, NSSecureCoding, NSCoping&gt;</code>三个协议。它不是一个类，准确说它是一个协议，并提供一系列方法。</li>
+<li>例如可以设置HTTP的请求一个JSON表示，并设置内容类型的HTTP报头字段值application/JSON</li>
+<li><code>AFHTTPRequestSerializer</code><ol>
+<li>提供一个具体的基本实现URL的查询字符串</li>
+<li>参数序列化和默认请求头,以及响应状态代码和内容类型验证</li>
+<li><code>+(instancetype)serializer;</code></li>
+</ol>
+</li>
+<li><code>AFMultipartFormData</code><ol>
+<li>添加数据到文件，返回BOOL类型的方法</li>
+</ol>
+</li>
+<li><code>AFJSONRequestSerializer</code>继承与<code>AFHTTPRequestSerializer</code></li>
+<li><code>AFPropertyListRequestSerializer</code>继承与<code>AFHTTPRequestSerializer</code></li>
+</ol>
+</li>
+<li><code>AFURLResponseSerialization.h</code><ol>
+<li>同样继承了<code>&lt;NSObject, NSSecureCoding, NSCoping&gt;</code>三个协议。</li>
+<li>它的协议是一个对象,通过解码数据转换成一个更有用的对象表示,根据服务器响应的细节。</li>
+<li>响应序列化器可能另外执行验证传入的响应和数据。</li>
+<li>例如,JSON响应序列化器可以检查一个可接受的状态代码(“2 xx”范围)和内容类型(application / JSON),解码一个有效的JSON响应对象。</li>
+<li>它有<code>AFJSONResponseSerializer</code>和<code>AFXMLParserResponseSerializer</code>和<code>AFXMLDocumentResponseSerializer</code>和<code>AFPropertyListResponseSerializer</code>,<code>AFImageResponseSerializer</code>,<code>AFCompoundResponseSerializer</code></li>
+</ol>
+</li>
+<li><code>AFSecurityPolicy.h</code><ol>
+<li>评估对固定服务器的信任，并与证书和公钥安全连接</li>
+<li>将固定的SSL证书添加到您的应用程序可以帮助防止中间人攻击和其他漏洞</li>
+<li>财务信息处理敏感的客户数据的应用程序被强烈鼓励所有通信路由在一个HTTPS和SSL连接固定配置和启用</li>
+</ol>
+</li>
+<li><code>AFNetworkReachabilityManager.h</code><ol>
+<li>来检测网络连接性，监控领域的可达性,和地址为无线广域网和无线网络接口</li>
+<li>可用于确定背景信息为什么网络操作失败,或触发一个网络操作重试建立连接</li>
+<li>不应该被用来防止用户启动一个网络请求,很可能一个初始请求可能需要建立可达性</li>
+<li><code>+(instancetype)sharedManager;</code>单例初始化方法，相当于<code>alloc init</code></li>
+</ol>
+</li>
+<li><code>AFURLConnectionOperation.h</code><ol>
+<li>它是一个子类“NSOperation”实现“NSURLConnection”委托的方法</li>
+<li>如果要创建一个子类通过HTTP或HTTPS通信的协议,您可能想要考虑子类化“AFHTTPRequestOperation”相反,因为它支持指定可接受的内容类型或状态码</li>
+<li>依靠CA信任模型来验证SSL证书公开应用程序安全漏洞,例如中间人攻击</li>
+<li>应用程序连接到服务器,SSL证书将提供了一个增加的安全级别,通过检查服务器证书有效性中指定的应用程序包。</li>
+<li><code>-(void)setShouldExecuteAsBackgroundTaskWithExpirationHandler:(void (^)(void))handler;指定操作应继续执行程序后进入后台,和后台任务到期处理程序。</code>同步调用处理程序的主线程,从而阻止应用程序的暂停瞬间同时通知应用程序。</li>
+</ol>
+</li>
+<li><code>AFHTTPRequestOperation.h</code><ol>
+<li>它是<code>AFURLConnectionOperation</code>的子类，使用HTTP或HTTPS协议，它封装了可接受的状态代码和内容类型的概念,确定请求的成功或失败。</li>
+</ol>
+</li>
+<li><code>AFHTTPRequestOperationManager.h</code><ol>
+<li>封装了与web应用程序通过HTTP通信的常见模式,包括创建请求,响应序列化,网络可达性监控、运营管理和安全,以及请求。</li>
+</ol>
+</li>
+<li><code>AFURLSessionManager.h</code></li>
+<li><code>AFHTTPSessionManager.h</code></li>
+</ol>
 
-进行storyboard的页面设置，创建tableView控件，
-
-将方法拖拽到ViewController中，进行实现，其中，引入了
-123@property (strong, nonatomic) IBOutlet UITableView *tableView;- (IBAction)addModel:(
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/CoreData的初级使用/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/11/11/hello-world/">Hello World</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-11-11T12:44:21.000Z" itemprop="datePublished">
-          2016-11-11
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/11/11/hello-world/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
         <nav class="pagination" role="pagination">
-          <a class="pull-left" href="/page/2/">← Newer Posts</a>
-          
-        </nav>
-    </div>
-</section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p></p>
-        </div>
+    
+    
+    <a class="pull-right" href="/2017/03/23/面经三🌸-我的樱花树快开吧/">
+        面经三🌸 我的樱花树快开吧 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo"><div id="comments"> 
+<?php if($this->allow('comment')): ?>
+<!-- 多说评论框 start -->
+
+	<div class="ds-thread" data-thread-key="<?php echo $this->cid;?>" data-title="<?php echo $this->title;?>" data-author-key="<?php echo $this->authorId;?>" data-url=""></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"jujuxw"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+<?php else: ?>
+<h4><?php _e('评论已关闭'); ?></h4> 
+<?php endif; ?> 
+</div></div>
     </div>
 </section>
 
-<!-- ============================ END Content =========================== -->
 
       
 <!-- ============================ Footer =========================== -->
