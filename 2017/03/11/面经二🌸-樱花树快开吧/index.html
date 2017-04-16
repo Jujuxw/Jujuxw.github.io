@@ -257,7 +257,7 @@
 <li><p>加载图片优化</p>
 <blockquote>
 <ul>
-<li>ÍUIImage的内存处理<ul>
+<li>UIImage的内存处理<ul>
 <li>Resource与imageWithContentsOfFile：<ul>
 <li>将文件直接拖到工程目录下，告诉Xcode打包项目时将这些图片打包进去，这样在应用”.app”文件中就有这些图片</li>
 <li>创建图片是通过读取文件数据得到的，读取一次文件数据就回产生一次NSData和UI个UIImage，当图片创建好后销毁NSData，当UIImage的引用计数为0时自动销毁UIImage，这样的图片不会长期存在在内存中</li>
