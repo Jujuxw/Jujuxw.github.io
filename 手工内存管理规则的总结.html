@@ -225,7 +225,7 @@
     </div>
     <div class="col-md-8 col-md-offset-2">
         <h1 id="手工内存管理规则的总结"><a href="#手工内存管理规则的总结" class="headerlink" title="手工内存管理规则的总结"></a>手工内存管理规则的总结</h1><ul>
-<li>如果需要保持一个对象不被销毁，可以使用retain。在使用对象后，需要使用release进行释放</li>
+<li>如果需要保持一个对象不被销毁，可以使用retain。在使用对象后，需要使用release进行释放.</li>
 <li>给对象发送release消息并不会销毁这个对象，只当这个对象的引用计数减至0时，对象才会被销毁。然后系统会发送dealloc消息给这个对象用于释放它的内存</li>
 <li>对使用了retain或者copy、mutableCopy、alloc或new方法的任何对象，以及具有retain和copy特性的属性进行释放，需要覆盖dealloc方法，使得在对象被释放的时候能够释放这些实例变量</li>
 <li>在自动释放池被清空时也会为自动释放的对象做些事情。系统每次都会在自动释放池被释放时发送release消息给池中的每个对象。如果池中的对象引用计数降为0，系统会发送dealloc消息销毁这个对象</li>
